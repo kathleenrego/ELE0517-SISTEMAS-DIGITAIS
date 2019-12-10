@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Tue Dec 10 10:14:46 2019
+Quartus II 64-Bit Version : 13.0.0 Build 156 04/24/2013 SJ Web Edition
+Revision Name : counter
+Top-level Entity Name : counter
+Family : Cyclone II
+Total logic elements : 1,777
+    Total combinational functions : 1,585
+    Dedicated logic registers : 954
+Total registers : 954
+Total pins : 27
+Total virtual pins : 0
+Total memory bits : 44,032
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

@@ -20,10 +20,10 @@ Códigos desenvolvidos na disciplina de Sistemas Digitais ministrada pelo profes
 ### Microcontrolador
 A seguir temos a documentação criada para desenvolver o microcontrolador:
 * [Intruções do MICRO](https://drive.google.com/file/d/1AAPpVUFLGtCfAn_PtlZ6gDA6dPSQpiuf/view?usp=sharing)
-* [Máquina de Estados]()
-* [ASMChart]()
-* [MDE baixo Nível]()
-* [Datapath]()
+* [Máquina de Estados](https://drive.google.com/file/d/1FhnIINe-px_ucmzbb2PE7AGxO0_wnkd8/view?usp=sharing)
+* [ASMChart](https://drive.google.com/file/d/1JMkhxPUnmDi9L9gF5H440tgAbHNlTziw/view?usp=sharing)
+* [MDE baixo Nível](https://drive.google.com/file/d/1YF6l6VloUbFogYSn1bPbv_MW8v45vX93/view?usp=sharing)
+* [Datapath](https://drive.google.com/file/d/1R49AGpTp93TDcm0bjQPE_y7y1AtDBtRm/view?usp=sharing)
 
 ### Práticas Desenvolvidas (Parte 1)
 

@@ -1,0 +1,117 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow Model Setup 'ClockDiv:clk_div|count[0]'
+Slack : -7.469
+TNS   : -508.013
+
+Type  : Slow Model Setup 'controller:ctrl|state.s_beq'
+Slack : -4.399
+TNS   : -70.875
+
+Type  : Slow Model Setup 'controller:ctrl|state.fetch'
+Slack : -3.210
+TNS   : -6.220
+
+Type  : Slow Model Setup 'clk'
+Slack : -2.377
+TNS   : -33.925
+
+Type  : Slow Model Hold 'ClockDiv:clk_div|count[0]'
+Slack : -3.392
+TNS   : -21.464
+
+Type  : Slow Model Hold 'clk'
+Slack : -3.351
+TNS   : -38.355
+
+Type  : Slow Model Hold 'controller:ctrl|state.s_beq'
+Slack : -2.524
+TNS   : -8.025
+
+Type  : Slow Model Hold 'controller:ctrl|state.fetch'
+Slack : -1.963
+TNS   : -3.754
+
+Type  : Slow Model Recovery 'clk'
+Slack : -4.014
+TNS   : -103.376
+
+Type  : Slow Model Removal 'clk'
+Slack : 0.518
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'ClockDiv:clk_div|count[0]'
+Slack : -2.000
+TNS   : -372.376
+
+Type  : Slow Model Minimum Pulse Width 'clk'
+Slack : -1.380
+TNS   : -27.380
+
+Type  : Slow Model Minimum Pulse Width 'controller:ctrl|state.fetch'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'controller:ctrl|state.s_beq'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Fast Model Setup 'ClockDiv:clk_div|count[0]'
+Slack : -2.938
+TNS   : -179.190
+
+Type  : Fast Model Setup 'controller:ctrl|state.s_beq'
+Slack : -1.680
+TNS   : -26.132
+
+Type  : Fast Model Setup 'controller:ctrl|state.fetch'
+Slack : -1.171
+TNS   : -2.149
+
+Type  : Fast Model Setup 'clk'
+Slack : -0.635
+TNS   : -5.083
+
+Type  : Fast Model Hold 'ClockDiv:clk_div|count[0]'
+Slack : -1.881
+TNS   : -14.505
+
+Type  : Fast Model Hold 'clk'
+Slack : -1.825
+TNS   : -25.788
+
+Type  : Fast Model Hold 'controller:ctrl|state.s_beq'
+Slack : -1.440
+TNS   : -4.969
+
+Type  : Fast Model Hold 'controller:ctrl|state.fetch'
+Slack : -1.228
+TNS   : -2.390
+
+Type  : Fast Model Recovery 'clk'
+Slack : -1.671
+TNS   : -42.900
+
+Type  : Fast Model Removal 'clk'
+Slack : 0.272
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'ClockDiv:clk_div|count[0]'
+Slack : -2.000
+TNS   : -372.376
+
+Type  : Fast Model Minimum Pulse Width 'clk'
+Slack : -1.380
+TNS   : -27.380
+
+Type  : Fast Model Minimum Pulse Width 'controller:ctrl|state.fetch'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'controller:ctrl|state.s_beq'
+Slack : 0.500
+TNS   : 0.000
+
+------------------------------------------------------------

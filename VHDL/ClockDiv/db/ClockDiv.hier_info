@@ -1,0 +1,30 @@
+|ClockDiv
+clkIn => count[0].CLK
+clkIn => count[1].CLK
+clkIn => count[2].CLK
+clkIn => count[3].CLK
+clkIn => count[4].CLK
+clkIn => count[5].CLK
+clkIn => count[6].CLK
+clkIn => count[7].CLK
+clkIn => count[8].CLK
+clkIn => count[9].CLK
+clkIn => count[10].CLK
+clkIn => count[11].CLK
+clkIn => count[12].CLK
+clkIn => count[13].CLK
+clkIn => count[14].CLK
+clkIn => count[15].CLK
+clkIn => count[16].CLK
+clkIn => count[17].CLK
+clkIn => count[18].CLK
+clkIn => count[19].CLK
+clkIn => count[20].CLK
+clkIn => count[21].CLK
+clkIn => count[22].CLK
+clkIn => count[23].CLK
+clkIn => count[24].CLK
+clkIn => count[25].CLK
+clkOut <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+
+

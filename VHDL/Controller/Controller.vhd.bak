@@ -1,0 +1,165 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity controller is
+	port(
+		
+		ctl_clk, ctl_rst: in std_logic;
+		
+		ctl_ld_i0, ctl_ld_i1: out std_logic;
+		
+		ctl_ld_o0, ctl_ld_o1: out std_logic;
+		
+		ctl_addr_i0, ctl_addr_o0, ctl_addr_o1, ctl_addr_pc: out std_logic_vector(1 downto 0);
+		ctl_addr_o2: out std_logic;
+		
+		ctl_ld_r0, ctl_ld_r1, ctl_ld_r2, ctl_ld_r3: out std_logic;
+		ctl_ld_o, ctl_ld_c, ctl_ld_s: out std_logic;
+		ctl_ld_pc, ctl_rst_pc, ctl_ld_rp, ctl_ld_ri: out std_logic;
+		
+		ctl_wr_md: out std_logic;
+		
+		ctl_ula_code: out std_logic_vector(2 downto 0);
+		
+		ctl_comp_eq, ctl_comp_lt: in std_logic;
+		ctl_C, ctl_O, ctl_S: in std_logic;
+		ctl_RI: in std_logic_vector(15 downto 0)
+	);
+end controller;
+
+architecture arc_controller of controller is
+type state_type is (init, fetch, decoder, 
+							s_add, s_sub, s_and, s_or, s_xor, s_srl, s_sll, s_sra, 
+							s_addi, s_andi, s_ori, s_xori, 
+							s_ld, s_st, s_nop, 
+							s_beq, s_blt, s_bge, s_call, s_ret, 
+							s_in, s_out, 
+							s_brc, s_brs,s_bro);
+							
+signal state: state_type := init;
+
+begin
+
+	-- Logic to advance to the next state
+	process (clk, rst)
+	begin
+		if rst = '1' then
+			state <= init;
+		elsif (rising_edge(clk)) then
+			case state is
+				when init =>
+					state <= fetch;
+				when fetch =>
+					state <= decoder;
+				when decoder =>
+					
+					case ctl_RI(15 downto 13) is
+						when "000" =>
+							case ctl_RI(12 downto 10) is
+								when "000" =>
+									state <= s_add;
+								when "001" =>
+									state <= s_sub;
+								when "010" =>
+									state <= s_and;
+								when "011" =>
+									state <= s_or;
+								when "100" =>
+									state <= s_xor;
+								when "101" =>
+									state <= s_srl;
+								when "110" =>
+									state <= s_sll;
+								when "111" =>
+									state <= s_sra;
+							end case;
+						when "001" =>
+							case ctl_RI(12) is
+								when '0' =>
+									state <= s_addi;
+								when '1' =>
+									state <= s_andi;
+							end case;
+						when "010" =>
+							case ctl_RI(12) is
+								when '0' =>
+									state <= s_ori;
+								when '1' =>
+									state <= s_xori;
+							end case;
+						when "011" =>
+							case ctl_RI(12 downto 11) is
+								when "00" =>
+									state <= s_ld;
+								when "01" =>
+									state <= s_st;
+								when "10" =>
+									state <= s_nop;
+								when "11" =>
+									state <= init;
+							end case;
+						when "100" =>
+							case ctl_RI(12 downto 11) is
+								when "00" =>
+									state <= s_beq;
+								when "01" =>
+									state <= s_blt;
+								when "10" =>
+									state <= s_bge;
+								when "11" =>
+									state <= init;
+							end case;
+						when "101" =>
+							case ctl_RI(12) is
+								when '0' =>
+									state <= s_call;
+								when '1' =>
+									state <= s_ret;
+							end case;
+						when "110" =>
+							case ctl_RI(12) is
+								when '0' =>
+									state <= s_in;
+								when '1' =>
+									state <= s_out;
+							end case;
+						when "111" =>
+							case ctl_RI(12 downto 11) is
+								when "00" =>
+									state <= s_brc;
+								when "01" =>
+									state <= s_bro;
+								when "10" =>
+									state <= s_brs;
+								when "11" =>
+									state <= init;
+							end case;
+					end case;
+					
+				when s_add =>
+					if input = '1' then
+						state <= s0;
+					else
+						state <= s3;
+					end if;
+			end case;
+		end if;
+	end process;
+
+	-- Output depends solely on the current state
+	process (state)
+	begin
+		case state is
+			when s0 =>
+				output <= "00";
+			when s1 =>
+				output <= "01";
+			when s2 =>
+				output <= "10";
+			when s3 =>
+				output <= "11";
+		end case;
+	end process;
+
+end arc_controller;

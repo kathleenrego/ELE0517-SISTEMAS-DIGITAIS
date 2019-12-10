@@ -1,0 +1,1 @@
+Warning (10492): VHDL Process Statement warning at Controller.vhd(298): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list

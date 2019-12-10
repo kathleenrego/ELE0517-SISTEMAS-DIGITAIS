@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\jeffi\Google Drive\01 - UFRN\2019.2\Sist. Digitais\Projeto\VHDL\Micro\simulation\qsim
+vmicro
+Z1 !s100 G=SFMiTBab3E=He94PN;f1
+Z2 IH8FhVJfhTo73S9j?VCiFE3
+Z3 V0aWZ_DDPfoL<PDa0^7J0:1
+Z4 dC:\Users\jeffi\Google Drive\01 - UFRN\2019.2\Sist. Digitais\Projeto\VHDL\Micro\simulation\qsim
+Z5 w1574706281
+Z6 8micro.vo
+Z7 Fmicro.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|micro.vo|
+Z10 o-work work -O0
+!i10b 1
+!s85 0
+Z11 !s108 1574706284.179000
+Z12 !s107 micro.vo|
+!s101 -O0
+vmicro_vlg_check_tst
+!i10b 1
+Z13 !s100 L7cK9KE=@iP]R9]h<dRH?0
+Z14 IkE0KcNk27IQ@W]]8>KNiE2
+Z15 VF]T3Id[hIDMU:k6Z8H>VE3
+R4
+Z16 w1574706278
+Z17 8micro.vt
+Z18 Fmicro.vt
+L0 63
+R8
+r1
+!s85 0
+31
+Z19 !s108 1574706285.751000
+Z20 !s107 micro.vt|
+Z21 !s90 -work|work|micro.vt|
+!s101 -O0
+R10
+vmicro_vlg_sample_tst
+!i10b 1
+Z22 !s100 3ioOYHcc_=b;Xz@1;d]R63
+Z23 IcVXe7dJ[9VTC=a[K4RY^H0
+Z24 VcPUAHN_Rjb_FzM4jSMg]b2
+R4
+R16
+R17
+R18
+L0 29
+R8
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R10
+vmicro_vlg_vec_tst
+!i10b 1
+!s100 NGLQY0NIDHgAL[=[<oYAE1
+I2@lE[ZXETNOz_>ma6X4:D0
+Z25 VhiIMa2nj2`a1[8Wj_V`RZ1
+R4
+R16
+R17
+R18
+Z26 L0 1987
+R8
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R10

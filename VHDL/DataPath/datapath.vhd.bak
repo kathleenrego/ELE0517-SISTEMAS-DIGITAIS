@@ -1,0 +1,31 @@
+library ieee;
+use ieee.numeric_std.all;
+
+entity datapath is
+port(
+		ld_i0, ld_i1: in std_logic;
+		data_i0, data_i1: in std_logic_vector(7 downto 0);
+		
+		ld_o1, ld_o2: in std_logic;
+		data_o0, data_o1: out std_logic_vector(7 downto 0);
+		
+		addr_i0, addr_o0, addr_o1, addr_pc: in std_logic_vector(1 downto 0);
+		addr_o2: in std_logic;
+		
+		ld_r0, ld_r1, ld_r2, ld_r3: in std_logic;
+		ld_o, ld_c, ld_s: in std_logic;
+		ld_pc, rst_pc, ld_rp, ld_ri: in std_logic;
+		
+		wr_md: in std_logic;
+		
+		ula_code: in std_logic_vector(2 downto 0);
+		
+		C, O, S: out std_logic;
+		RI: out std_logic_vector(15 downto 0);
+	);
+end datapath;
+
+architecture arc_datapath from datapath is
+begin
+
+end arc_datapath;

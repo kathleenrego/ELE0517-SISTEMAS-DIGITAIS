@@ -1,0 +1,23 @@
+library ieee;
+use ieee.numeric_std.all;
+
+entity comp_8 is
+	port(
+		comp_in0, comp_in1: in std_logic_vector(7 downto 0);
+		comp_eq, comp_lt: out std_logic;
+	);
+end comp_8;
+
+architecture arc_comp_8 from comp_8 is
+begin
+	process(comp_in0, comp_in1)
+	begin
+		if(signed(comp_in0) = signed(comp_in1)) then
+			comp_eq <= '1';
+			comp_lt <= '0';
+		elsif(signed(comp_in0) < signed(comp_in1)) then
+			comp_eq <= '0';
+			comp_lt <= '1';
+		end if;
+	end process;
+end arc_comp_8;

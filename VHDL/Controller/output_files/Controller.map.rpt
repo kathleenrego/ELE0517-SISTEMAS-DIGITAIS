@@ -1,0 +1,448 @@
+Analysis & Synthesis report for Controller
+Tue Nov 19 06:33:13 2019
+Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |controller|state
+  9. User-Specified and Inferred Latches
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue Nov 19 06:33:13 2019           ;
+; Quartus II 32-bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; Controller                                      ;
+; Top-level Entity Name              ; controller                                      ;
+; Family                             ; Cyclone IV GX                                   ;
+; Total logic elements               ; 119                                             ;
+;     Total combinational functions  ; 114                                             ;
+;     Dedicated logic registers      ; 31                                              ;
+; Total registers                    ; 31                                              ;
+; Total pins                         ; 51                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total GXB Receiver Channel PCS     ; 0                                               ;
+; Total GXB Receiver Channel PMA     ; 0                                               ;
+; Total GXB Transmitter Channel PCS  ; 0                                               ;
+; Total GXB Transmitter Channel PMA  ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Top-level entity name                                                      ; Controller         ; Controller         ;
+; Family name                                                                ; Cyclone IV GX      ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 2      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                             ;
++----------------------------------+-----------------+-----------------+-----------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path      ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------+---------+
+; Controller.vhd                   ; yes             ; User VHDL File  ; F:/VHDL/Controller/Controller.vhd ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------+---------+
+
+
++---------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary ;
++--------------------------+------------------+
+; Resource                 ; Usage            ;
++--------------------------+------------------+
+; I/O pins                 ; 51               ;
+; DSP block 9-bit elements ; 0                ;
+; Maximum fan-out node     ; ctl_clk~input    ;
+; Maximum fan-out          ; 31               ;
+; Total fan-out            ; 549              ;
+; Average fan-out          ; 2.22             ;
++--------------------------+------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                     ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------+--------------+
+; |controller                ; 114 (114)         ; 31 (31)      ; 0           ; 0            ; 0       ; 0         ; 0         ; 51   ; 0            ; |controller         ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |controller|state                                                                                                                                                                                                                                                                                                                                                                                                                                   ;
++---------------+-------------+-------------+-------------+-------------+------------+-------------+--------------+-------------+--------------+-------------+--------------+-------------+--------------+-------------+------------+------------+--------------+-------------+--------------+--------------+-------------+-------------+-------------+-------------+------------+-------------+-------------+-------------+---------------+-------------+------------+
+; Name          ; state.s_bro ; state.s_brs ; state.s_brc ; state.s_out ; state.s_in ; state.s_ret ; state.s_call ; state.s_bge ; state.s_bge1 ; state.s_blt ; state.s_blt1 ; state.s_beq ; state.s_beq1 ; state.s_nop ; state.s_st ; state.s_ld ; state.s_xori ; state.s_ori ; state.s_andi ; state.s_addi ; state.s_sra ; state.s_sll ; state.s_srl ; state.s_xor ; state.s_or ; state.s_and ; state.s_sub ; state.s_add ; state.decoder ; state.fetch ; state.init ;
++---------------+-------------+-------------+-------------+-------------+------------+-------------+--------------+-------------+--------------+-------------+--------------+-------------+--------------+-------------+------------+------------+--------------+-------------+--------------+--------------+-------------+-------------+-------------+-------------+------------+-------------+-------------+-------------+---------------+-------------+------------+
+; state.init    ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0          ; 0          ; 0            ; 0           ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0           ; 0           ; 0             ; 0           ; 0          ;
+; state.fetch   ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0          ; 0          ; 0            ; 0           ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0           ; 0           ; 0             ; 1           ; 1          ;
+; state.decoder ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0          ; 0          ; 0            ; 0           ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0           ; 0           ; 1             ; 0           ; 1          ;
+; state.s_add   ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0          ; 0          ; 0            ; 0           ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0           ; 1           ; 0             ; 0           ; 1          ;
+; state.s_sub   ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0          ; 0          ; 0            ; 0           ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 1           ; 0           ; 0             ; 0           ; 1          ;
+; state.s_and   ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0          ; 0          ; 0            ; 0           ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0          ; 1           ; 0           ; 0           ; 0             ; 0           ; 1          ;
+; state.s_or    ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0          ; 0          ; 0            ; 0           ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 1          ; 0           ; 0           ; 0           ; 0             ; 0           ; 1          ;
+; state.s_xor   ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0          ; 0          ; 0            ; 0           ; 0            ; 0            ; 0           ; 0           ; 0           ; 1           ; 0          ; 0           ; 0           ; 0           ; 0             ; 0           ; 1          ;
+; state.s_srl   ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0          ; 0          ; 0            ; 0           ; 0            ; 0            ; 0           ; 0           ; 1           ; 0           ; 0          ; 0           ; 0           ; 0           ; 0             ; 0           ; 1          ;
+; state.s_sll   ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0          ; 0          ; 0            ; 0           ; 0            ; 0            ; 0           ; 1           ; 0           ; 0           ; 0          ; 0           ; 0           ; 0           ; 0             ; 0           ; 1          ;
+; state.s_sra   ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0          ; 0          ; 0            ; 0           ; 0            ; 0            ; 1           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0           ; 0           ; 0             ; 0           ; 1          ;
+; state.s_addi  ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0          ; 0          ; 0            ; 0           ; 0            ; 1            ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0           ; 0           ; 0             ; 0           ; 1          ;
+; state.s_andi  ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0          ; 0          ; 0            ; 0           ; 1            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0           ; 0           ; 0             ; 0           ; 1          ;
+; state.s_ori   ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0          ; 0          ; 0            ; 1           ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0           ; 0           ; 0             ; 0           ; 1          ;
+; state.s_xori  ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0          ; 0          ; 1            ; 0           ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0           ; 0           ; 0             ; 0           ; 1          ;
+; state.s_ld    ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0          ; 1          ; 0            ; 0           ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0           ; 0           ; 0             ; 0           ; 1          ;
+; state.s_st    ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 1          ; 0          ; 0            ; 0           ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0           ; 0           ; 0             ; 0           ; 1          ;
+; state.s_nop   ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 1           ; 0          ; 0          ; 0            ; 0           ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0           ; 0           ; 0             ; 0           ; 1          ;
+; state.s_beq1  ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 1            ; 0           ; 0          ; 0          ; 0            ; 0           ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0           ; 0           ; 0             ; 0           ; 1          ;
+; state.s_beq   ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 1           ; 0            ; 0           ; 0          ; 0          ; 0            ; 0           ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0           ; 0           ; 0             ; 0           ; 1          ;
+; state.s_blt1  ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0            ; 0           ; 0            ; 0           ; 1            ; 0           ; 0            ; 0           ; 0          ; 0          ; 0            ; 0           ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0           ; 0           ; 0             ; 0           ; 1          ;
+; state.s_blt   ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0            ; 0           ; 0            ; 1           ; 0            ; 0           ; 0            ; 0           ; 0          ; 0          ; 0            ; 0           ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0           ; 0           ; 0             ; 0           ; 1          ;
+; state.s_bge1  ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0            ; 0           ; 1            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0          ; 0          ; 0            ; 0           ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0           ; 0           ; 0             ; 0           ; 1          ;
+; state.s_bge   ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0            ; 1           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0          ; 0          ; 0            ; 0           ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0           ; 0           ; 0             ; 0           ; 1          ;
+; state.s_call  ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 1            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0          ; 0          ; 0            ; 0           ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0           ; 0           ; 0             ; 0           ; 1          ;
+; state.s_ret   ; 0           ; 0           ; 0           ; 0           ; 0          ; 1           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0          ; 0          ; 0            ; 0           ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0           ; 0           ; 0             ; 0           ; 1          ;
+; state.s_in    ; 0           ; 0           ; 0           ; 0           ; 1          ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0          ; 0          ; 0            ; 0           ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0           ; 0           ; 0             ; 0           ; 1          ;
+; state.s_out   ; 0           ; 0           ; 0           ; 1           ; 0          ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0          ; 0          ; 0            ; 0           ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0           ; 0           ; 0             ; 0           ; 1          ;
+; state.s_brc   ; 0           ; 0           ; 1           ; 0           ; 0          ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0          ; 0          ; 0            ; 0           ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0           ; 0           ; 0             ; 0           ; 1          ;
+; state.s_brs   ; 0           ; 1           ; 0           ; 0           ; 0          ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0          ; 0          ; 0            ; 0           ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0           ; 0           ; 0             ; 0           ; 1          ;
+; state.s_bro   ; 1           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0          ; 0          ; 0            ; 0           ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0           ; 0           ; 0             ; 0           ; 1          ;
++---------------+-------------+-------------+-------------+-------------+------------+-------------+--------------+-------------+--------------+-------------+--------------+-------------+--------------+-------------+------------+------------+--------------+-------------+--------------+--------------+-------------+-------------+-------------+-------------+------------+-------------+-------------+-------------+---------------+-------------+------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; ctl_ld_i0$latch                                     ; WideOr3             ; yes                    ;
+; ctl_ld_i1$latch                                     ; WideOr3             ; yes                    ;
+; ctl_ld_o0$latch                                     ; WideOr3             ; yes                    ;
+; ctl_ld_o1$latch                                     ; WideOr3             ; yes                    ;
+; ctl_addr_i0[0]$latch                                ; WideOr3             ; yes                    ;
+; ctl_addr_i0[1]$latch                                ; WideOr3             ; yes                    ;
+; ctl_addr_o0[0]$latch                                ; WideOr3             ; yes                    ;
+; ctl_addr_o0[1]$latch                                ; WideOr3             ; yes                    ;
+; ctl_addr_o1[0]$latch                                ; WideOr3             ; yes                    ;
+; ctl_addr_o1[1]$latch                                ; WideOr3             ; yes                    ;
+; ctl_addr_o2$latch                                   ; WideOr3             ; yes                    ;
+; ctl_ld_r1$latch                                     ; WideOr3             ; yes                    ;
+; ctl_ld_r2$latch                                     ; WideOr3             ; yes                    ;
+; ctl_ld_r3$latch                                     ; WideOr3             ; yes                    ;
+; ctl_ld_o$latch                                      ; WideOr3             ; yes                    ;
+; ctl_ld_c$latch                                      ; WideOr3             ; yes                    ;
+; ctl_ld_s$latch                                      ; WideOr3             ; yes                    ;
+; ctl_rst_pc$latch                                    ; WideOr3             ; yes                    ;
+; ctl_ld_rp$latch                                     ; WideOr3             ; yes                    ;
+; ctl_ld_ri$latch                                     ; WideOr3             ; yes                    ;
+; ctl_wr_md$latch                                     ; WideOr3             ; yes                    ;
+; ctl_ula_code[0]$latch                               ; WideOr3             ; yes                    ;
+; ctl_ula_code[1]$latch                               ; WideOr3             ; yes                    ;
+; ctl_ula_code[2]$latch                               ; WideOr3             ; yes                    ;
+; Number of user-specified and inferred latches = 24  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 31    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 31    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |controller|state          ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |controller|state          ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |controller|state          ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |controller|state          ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |controller|state          ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |controller|state          ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |controller|state          ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |controller|state          ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |controller|Selector18     ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |controller|Selector15     ;
+; 15:1               ; 3 bits    ; 30 LEs        ; 6 LEs                ; 24 LEs                 ; No         ; |controller|Selector36     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 32-bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Tue Nov 19 06:33:07 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Controller -c Controller
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file controller.vhd
+    Info (12022): Found design unit 1: controller-arc_controller
+    Info (12023): Found entity 1: controller
+Info (12127): Elaborating entity "Controller" for the top level hierarchy
+Warning (10492): VHDL Process Statement warning at Controller.vhd(305): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(339): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(340): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(356): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(390): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(391): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(407): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(441): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(442): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(458): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(492): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(493): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(509): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(543): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(544): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(560): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(594): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(595): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(611): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(645): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(646): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(662): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(696): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(697): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(713): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(747): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(764): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(798): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(815): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(849): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(866): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(900): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(917): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(952): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(982): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(983): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(1045): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(1046): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(1054): signal "ctl_comp_eq" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(1085): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(1086): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(1094): signal "ctl_comp_lt" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(1125): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(1126): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(1134): signal "ctl_comp_lt" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(1213): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(1247): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(1268): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(1295): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(1323): signal "ctl_C" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(1361): signal "ctl_O" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(1399): signal "ctl_S" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at Controller.vhd(202): inferring latch(es) for signal or variable "ctl_ld_i0", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Controller.vhd(202): inferring latch(es) for signal or variable "ctl_ld_i1", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Controller.vhd(202): inferring latch(es) for signal or variable "ctl_ld_o0", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Controller.vhd(202): inferring latch(es) for signal or variable "ctl_ld_o1", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Controller.vhd(202): inferring latch(es) for signal or variable "ctl_ld_r0", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Controller.vhd(202): inferring latch(es) for signal or variable "ctl_ld_r1", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Controller.vhd(202): inferring latch(es) for signal or variable "ctl_ld_r2", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Controller.vhd(202): inferring latch(es) for signal or variable "ctl_ld_r3", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Controller.vhd(202): inferring latch(es) for signal or variable "ctl_ld_o", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Controller.vhd(202): inferring latch(es) for signal or variable "ctl_ld_c", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Controller.vhd(202): inferring latch(es) for signal or variable "ctl_ld_s", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Controller.vhd(202): inferring latch(es) for signal or variable "ctl_rst_pc", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Controller.vhd(202): inferring latch(es) for signal or variable "ctl_ld_rp", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Controller.vhd(202): inferring latch(es) for signal or variable "ctl_ld_ri", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Controller.vhd(202): inferring latch(es) for signal or variable "ctl_addr_i0", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Controller.vhd(202): inferring latch(es) for signal or variable "ctl_addr_o0", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Controller.vhd(202): inferring latch(es) for signal or variable "ctl_addr_o1", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Controller.vhd(202): inferring latch(es) for signal or variable "ctl_addr_o2", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Controller.vhd(202): inferring latch(es) for signal or variable "ctl_wr_md", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Controller.vhd(202): inferring latch(es) for signal or variable "ctl_ula_code", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "ctl_ula_code[0]" at Controller.vhd(202)
+Info (10041): Inferred latch for "ctl_ula_code[1]" at Controller.vhd(202)
+Info (10041): Inferred latch for "ctl_ula_code[2]" at Controller.vhd(202)
+Info (10041): Inferred latch for "ctl_wr_md" at Controller.vhd(202)
+Info (10041): Inferred latch for "ctl_addr_o2" at Controller.vhd(202)
+Info (10041): Inferred latch for "ctl_addr_o1[0]" at Controller.vhd(202)
+Info (10041): Inferred latch for "ctl_addr_o1[1]" at Controller.vhd(202)
+Info (10041): Inferred latch for "ctl_addr_o0[0]" at Controller.vhd(202)
+Info (10041): Inferred latch for "ctl_addr_o0[1]" at Controller.vhd(202)
+Info (10041): Inferred latch for "ctl_addr_i0[0]" at Controller.vhd(202)
+Info (10041): Inferred latch for "ctl_addr_i0[1]" at Controller.vhd(202)
+Info (10041): Inferred latch for "ctl_ld_ri" at Controller.vhd(202)
+Info (10041): Inferred latch for "ctl_ld_rp" at Controller.vhd(202)
+Info (10041): Inferred latch for "ctl_rst_pc" at Controller.vhd(202)
+Info (10041): Inferred latch for "ctl_ld_s" at Controller.vhd(202)
+Info (10041): Inferred latch for "ctl_ld_c" at Controller.vhd(202)
+Info (10041): Inferred latch for "ctl_ld_o" at Controller.vhd(202)
+Info (10041): Inferred latch for "ctl_ld_r3" at Controller.vhd(202)
+Info (10041): Inferred latch for "ctl_ld_r2" at Controller.vhd(202)
+Info (10041): Inferred latch for "ctl_ld_r1" at Controller.vhd(202)
+Info (10041): Inferred latch for "ctl_ld_r0" at Controller.vhd(202)
+Info (10041): Inferred latch for "ctl_ld_o1" at Controller.vhd(202)
+Info (10041): Inferred latch for "ctl_ld_o0" at Controller.vhd(202)
+Info (10041): Inferred latch for "ctl_ld_i1" at Controller.vhd(202)
+Info (10041): Inferred latch for "ctl_ld_i0" at Controller.vhd(202)
+Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
+    Info (13026): Duplicate LATCH primitive "ctl_ld_i1$latch" merged with LATCH primitive "ctl_ld_i0$latch"
+    Info (13026): Duplicate LATCH primitive "ctl_ld_c$latch" merged with LATCH primitive "ctl_ld_o$latch"
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "ctl_ld_r0" is stuck at VCC
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 4 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "ctl_RI[0]"
+    Warning (15610): No output dependent on input pin "ctl_RI[1]"
+    Warning (15610): No output dependent on input pin "ctl_RI[2]"
+    Warning (15610): No output dependent on input pin "ctl_RI[3]"
+Info (21057): Implemented 170 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 23 input pins
+    Info (21059): Implemented 28 output pins
+    Info (21061): Implemented 119 logic cells
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 80 warnings
+    Info: Peak virtual memory: 386 megabytes
+    Info: Processing ended: Tue Nov 19 06:33:14 2019
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:03
+
+

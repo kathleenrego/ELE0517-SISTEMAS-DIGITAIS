@@ -1,0 +1,64 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity micro is
+
+end micro;
+
+architecture arc_micro of micro is
+
+entity controller is
+	port(
+		
+		ctl_clk, ctl_rst: in std_logic;
+		
+		ctl_comp_eq, ctl_comp_lt: in std_logic;
+		ctl_C, ctl_O, ctl_S: in std_logic;
+		ctl_RI: in std_logic_vector(15 downto 0);
+		
+		ctl_ld_i0, ctl_ld_i1: out std_logic;
+		
+		ctl_ld_o0, ctl_ld_o1: out std_logic;
+		
+		ctl_addr_i0, ctl_addr_o0, ctl_addr_o1, ctl_addr_pc: out std_logic_vector(1 downto 0);
+		ctl_addr_o2: out std_logic;
+		
+		ctl_ld_r0, ctl_ld_r1, ctl_ld_r2, ctl_ld_r3: out std_logic;
+		ctl_ld_o, ctl_ld_c, ctl_ld_s: out std_logic;
+		ctl_ld_pc, ctl_rst_pc, ctl_ld_rp, ctl_ld_ri: out std_logic;
+		
+		ctl_wr_md: out std_logic;
+		
+		ctl_ula_code: out std_logic_vector(2 downto 0)
+	);
+end controller;
+
+entity datapath is
+port(
+		dp_clk: in std_logic;
+		
+		dp_ld_i0, dp_ld_i1: in std_logic;
+		data_in_i0, data_in_i1: in std_logic_vector(7 downto 0);
+		
+		dp_ld_o0, dp_ld_o1: in std_logic;
+		data_out_o0, data_out_o1: out std_logic_vector(7 downto 0);
+		
+		dp_addr_i0, dp_addr_o0, dp_addr_o1, dp_addr_pc: in std_logic_vector(1 downto 0);
+		dp_addr_o2: in std_logic;
+		
+		dp_ld_r0, dp_ld_r1, dp_ld_r2, dp_ld_r3: in std_logic;
+		dp_ld_o, dp_ld_c, dp_ld_s: in std_logic;
+		dp_ld_pc, dp_rst_pc, dp_ld_rp, dp_ld_ri: in std_logic;
+		
+		dp_wr_md: in std_logic;
+		
+		dp_ula_code: in std_logic_vector(2 downto 0);
+		
+		dp_comp_eq, dp_comp_lt: out std_logic;
+		dp_C, dp_O, dp_S: out std_logic;
+		dp_RI: buffer std_logic_vector(15 downto 0)
+	);
+end datapath;
+
+end arc_micro;

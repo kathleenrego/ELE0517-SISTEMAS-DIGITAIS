@@ -1,0 +1,1083 @@
+Analysis & Synthesis report for micro
+Tue Nov 26 23:55:28 2019
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. Analysis & Synthesis IP Cores Summary
+ 10. State Machine - |micro|controller:ctrl|state
+ 11. User-Specified and Inferred Latches
+ 12. Registers Removed During Synthesis
+ 13. General Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Source assignments for datapath:dp|men_dados:md|altsyncram:altsyncram_component|altsyncram_l0g1:auto_generated
+ 16. Source assignments for datapath:dp|men_prog:mp|altsyncram:altsyncram_component|altsyncram_nki1:auto_generated
+ 17. Parameter Settings for User Entity Instance: datapath:dp|men_dados:md|altsyncram:altsyncram_component
+ 18. Parameter Settings for User Entity Instance: datapath:dp|men_prog:mp|altsyncram:altsyncram_component
+ 19. Parameter Settings for Inferred Entity Instance: convert3Disp:conv_3|lpm_divide:Mod1
+ 20. Parameter Settings for Inferred Entity Instance: convert3Disp:conv_3|lpm_divide:Mod0
+ 21. Parameter Settings for Inferred Entity Instance: convert3Disp:conv_3|lpm_divide:Div0
+ 22. altsyncram Parameter Settings by Entity Instance
+ 23. Port Connectivity Checks: "datapath:dp|reg8_l:reg_r0"
+ 24. Elapsed Time Per Partition
+ 25. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue Nov 26 23:55:28 2019           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; micro                                           ;
+; Top-level Entity Name              ; micro                                           ;
+; Family                             ; Cyclone II                                      ;
+; Total logic elements               ; 752                                             ;
+;     Total combinational functions  ; 691                                             ;
+;     Dedicated logic registers      ; 134                                             ;
+; Total registers                    ; 134                                             ;
+; Total pins                         ; 139                                             ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 18,432                                          ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C35F672C6       ;                    ;
+; Top-level entity name                                                      ; micro              ; micro              ;
+; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                                                     ;
++-------------------------------------------------------------------------------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                                                                      ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                                                  ; Library ;
++-------------------------------------------------------------------------------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------------------------------------------+---------+
+; convert3Disp.vhd                                                                                      ; yes             ; User VHDL File                         ; C:/Users/jeffi/Google Drive/01 - UFRN/2019.2/Sist. Digitais/Projeto/VHDL/Aplicação/convert3Disp.vhd           ;         ;
+; convert2Disp7.vhd                                                                                     ; yes             ; User VHDL File                         ; C:/Users/jeffi/Google Drive/01 - UFRN/2019.2/Sist. Digitais/Projeto/VHDL/Aplicação/convert2Disp7.vhd          ;         ;
+; ../Memories/men_prog/men_prog.vhd                                                                     ; yes             ; User Wizard-Generated File             ; C:/Users/jeffi/Google Drive/01 - UFRN/2019.2/Sist. Digitais/Projeto/VHDL/Memories/men_prog/men_prog.vhd       ;         ;
+; ../Memories/men_dados/men_dados.vhd                                                                   ; yes             ; User Wizard-Generated File             ; C:/Users/jeffi/Google Drive/01 - UFRN/2019.2/Sist. Digitais/Projeto/VHDL/Memories/men_dados/men_dados.vhd     ;         ;
+; ../ULA/xor_9.vhd                                                                                      ; yes             ; User VHDL File                         ; C:/Users/jeffi/Google Drive/01 - UFRN/2019.2/Sist. Digitais/Projeto/VHDL/ULA/xor_9.vhd                        ;         ;
+; ../ULA/ula.vhd                                                                                        ; yes             ; User VHDL File                         ; C:/Users/jeffi/Google Drive/01 - UFRN/2019.2/Sist. Digitais/Projeto/VHDL/ULA/ula.vhd                          ;         ;
+; ../ULA/sub_9.vhd                                                                                      ; yes             ; User VHDL File                         ; C:/Users/jeffi/Google Drive/01 - UFRN/2019.2/Sist. Digitais/Projeto/VHDL/ULA/sub_9.vhd                        ;         ;
+; ../ULA/srl_9.vhd                                                                                      ; yes             ; User VHDL File                         ; C:/Users/jeffi/Google Drive/01 - UFRN/2019.2/Sist. Digitais/Projeto/VHDL/ULA/srl_9.vhd                        ;         ;
+; ../ULA/sra_9.vhd                                                                                      ; yes             ; User VHDL File                         ; C:/Users/jeffi/Google Drive/01 - UFRN/2019.2/Sist. Digitais/Projeto/VHDL/ULA/sra_9.vhd                        ;         ;
+; ../ULA/sll_9.vhd                                                                                      ; yes             ; User VHDL File                         ; C:/Users/jeffi/Google Drive/01 - UFRN/2019.2/Sist. Digitais/Projeto/VHDL/ULA/sll_9.vhd                        ;         ;
+; ../ULA/or_9.vhd                                                                                       ; yes             ; User VHDL File                         ; C:/Users/jeffi/Google Drive/01 - UFRN/2019.2/Sist. Digitais/Projeto/VHDL/ULA/or_9.vhd                         ;         ;
+; ../ULA/mux8x1_9.vhd                                                                                   ; yes             ; User VHDL File                         ; C:/Users/jeffi/Google Drive/01 - UFRN/2019.2/Sist. Digitais/Projeto/VHDL/ULA/mux8x1_9.vhd                     ;         ;
+; ../ULA/and_9.vhd                                                                                      ; yes             ; User VHDL File                         ; C:/Users/jeffi/Google Drive/01 - UFRN/2019.2/Sist. Digitais/Projeto/VHDL/ULA/and_9.vhd                        ;         ;
+; ../ULA/add_9.vhd                                                                                      ; yes             ; User VHDL File                         ; C:/Users/jeffi/Google Drive/01 - UFRN/2019.2/Sist. Digitais/Projeto/VHDL/ULA/add_9.vhd                        ;         ;
+; ../DataPath/reg16_l.vhd                                                                               ; yes             ; User VHDL File                         ; C:/Users/jeffi/Google Drive/01 - UFRN/2019.2/Sist. Digitais/Projeto/VHDL/DataPath/reg16_l.vhd                 ;         ;
+; ../DataPath/reg10_l.vhd                                                                               ; yes             ; User VHDL File                         ; C:/Users/jeffi/Google Drive/01 - UFRN/2019.2/Sist. Digitais/Projeto/VHDL/DataPath/reg10_l.vhd                 ;         ;
+; ../DataPath/reg10.vhd                                                                                 ; yes             ; User VHDL File                         ; C:/Users/jeffi/Google Drive/01 - UFRN/2019.2/Sist. Digitais/Projeto/VHDL/DataPath/reg10.vhd                   ;         ;
+; ../DataPath/reg8_l.vhd                                                                                ; yes             ; User VHDL File                         ; C:/Users/jeffi/Google Drive/01 - UFRN/2019.2/Sist. Digitais/Projeto/VHDL/DataPath/reg8_l.vhd                  ;         ;
+; ../DataPath/reg1_l.vhd                                                                                ; yes             ; User VHDL File                         ; C:/Users/jeffi/Google Drive/01 - UFRN/2019.2/Sist. Digitais/Projeto/VHDL/DataPath/reg1_l.vhd                  ;         ;
+; ../DataPath/mux4x1_10.vhd                                                                             ; yes             ; User VHDL File                         ; C:/Users/jeffi/Google Drive/01 - UFRN/2019.2/Sist. Digitais/Projeto/VHDL/DataPath/mux4x1_10.vhd               ;         ;
+; ../DataPath/mux4x1_8.vhd                                                                              ; yes             ; User VHDL File                         ; C:/Users/jeffi/Google Drive/01 - UFRN/2019.2/Sist. Digitais/Projeto/VHDL/DataPath/mux4x1_8.vhd                ;         ;
+; ../DataPath/mux2x1_8.vhd                                                                              ; yes             ; User VHDL File                         ; C:/Users/jeffi/Google Drive/01 - UFRN/2019.2/Sist. Digitais/Projeto/VHDL/DataPath/mux2x1_8.vhd                ;         ;
+; ../DataPath/inc_10.vhd                                                                                ; yes             ; User VHDL File                         ; C:/Users/jeffi/Google Drive/01 - UFRN/2019.2/Sist. Digitais/Projeto/VHDL/DataPath/inc_10.vhd                  ;         ;
+; ../DataPath/datapath.vhd                                                                              ; yes             ; User VHDL File                         ; C:/Users/jeffi/Google Drive/01 - UFRN/2019.2/Sist. Digitais/Projeto/VHDL/DataPath/datapath.vhd                ;         ;
+; ../DataPath/comp_8.vhd                                                                                ; yes             ; User VHDL File                         ; C:/Users/jeffi/Google Drive/01 - UFRN/2019.2/Sist. Digitais/Projeto/VHDL/DataPath/comp_8.vhd                  ;         ;
+; ../DataPath/add_10.vhd                                                                                ; yes             ; User VHDL File                         ; C:/Users/jeffi/Google Drive/01 - UFRN/2019.2/Sist. Digitais/Projeto/VHDL/DataPath/add_10.vhd                  ;         ;
+; ../DataPath/add_8.vhd                                                                                 ; yes             ; User VHDL File                         ; C:/Users/jeffi/Google Drive/01 - UFRN/2019.2/Sist. Digitais/Projeto/VHDL/DataPath/add_8.vhd                   ;         ;
+; ../Controller/Controller.vhd                                                                          ; yes             ; User VHDL File                         ; C:/Users/jeffi/Google Drive/01 - UFRN/2019.2/Sist. Digitais/Projeto/VHDL/Controller/Controller.vhd            ;         ;
+; micro.vhd                                                                                             ; yes             ; User VHDL File                         ; C:/Users/jeffi/Google Drive/01 - UFRN/2019.2/Sist. Digitais/Projeto/VHDL/Aplicação/micro.vhd                  ;         ;
+; altsyncram.tdf                                                                                        ; yes             ; Megafunction                           ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altsyncram.tdf                                              ;         ;
+; stratix_ram_block.inc                                                                                 ; yes             ; Megafunction                           ; c:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_ram_block.inc                                       ;         ;
+; lpm_mux.inc                                                                                           ; yes             ; Megafunction                           ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_mux.inc                                                 ;         ;
+; lpm_decode.inc                                                                                        ; yes             ; Megafunction                           ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_decode.inc                                              ;         ;
+; aglobal130.inc                                                                                        ; yes             ; Megafunction                           ; c:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc                                              ;         ;
+; a_rdenreg.inc                                                                                         ; yes             ; Megafunction                           ; c:/altera/13.0sp1/quartus/libraries/megafunctions/a_rdenreg.inc                                               ;         ;
+; altrom.inc                                                                                            ; yes             ; Megafunction                           ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altrom.inc                                                  ;         ;
+; altram.inc                                                                                            ; yes             ; Megafunction                           ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altram.inc                                                  ;         ;
+; altdpram.inc                                                                                          ; yes             ; Megafunction                           ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altdpram.inc                                                ;         ;
+; db/altsyncram_l0g1.tdf                                                                                ; yes             ; Auto-Generated Megafunction            ; C:/Users/jeffi/Google Drive/01 - UFRN/2019.2/Sist. Digitais/Projeto/VHDL/Aplicação/db/altsyncram_l0g1.tdf     ;         ;
+; db/altsyncram_nki1.tdf                                                                                ; yes             ; Auto-Generated Megafunction            ; C:/Users/jeffi/Google Drive/01 - UFRN/2019.2/Sist. Digitais/Projeto/VHDL/Aplicação/db/altsyncram_nki1.tdf     ;         ;
+; /users/jeffi/google drive/01 - ufrn/2019.2/sist. digitais/projeto/vhdl/memories/men_prog/men_prog.mif ; yes             ; Auto-Found Memory Initialization File  ; /users/jeffi/google drive/01 - ufrn/2019.2/sist. digitais/projeto/vhdl/memories/men_prog/men_prog.mif         ;         ;
+; lpm_divide.tdf                                                                                        ; yes             ; Megafunction                           ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_divide.tdf                                              ;         ;
+; abs_divider.inc                                                                                       ; yes             ; Megafunction                           ; c:/altera/13.0sp1/quartus/libraries/megafunctions/abs_divider.inc                                             ;         ;
+; sign_div_unsign.inc                                                                                   ; yes             ; Megafunction                           ; c:/altera/13.0sp1/quartus/libraries/megafunctions/sign_div_unsign.inc                                         ;         ;
+; db/lpm_divide_q7m.tdf                                                                                 ; yes             ; Auto-Generated Megafunction            ; C:/Users/jeffi/Google Drive/01 - UFRN/2019.2/Sist. Digitais/Projeto/VHDL/Aplicação/db/lpm_divide_q7m.tdf      ;         ;
+; db/sign_div_unsign_1nh.tdf                                                                            ; yes             ; Auto-Generated Megafunction            ; C:/Users/jeffi/Google Drive/01 - UFRN/2019.2/Sist. Digitais/Projeto/VHDL/Aplicação/db/sign_div_unsign_1nh.tdf ;         ;
+; db/alt_u_div_45f.tdf                                                                                  ; yes             ; Auto-Generated Megafunction            ; C:/Users/jeffi/Google Drive/01 - UFRN/2019.2/Sist. Digitais/Projeto/VHDL/Aplicação/db/alt_u_div_45f.tdf       ;         ;
+; db/add_sub_lkc.tdf                                                                                    ; yes             ; Auto-Generated Megafunction            ; C:/Users/jeffi/Google Drive/01 - UFRN/2019.2/Sist. Digitais/Projeto/VHDL/Aplicação/db/add_sub_lkc.tdf         ;         ;
+; db/add_sub_mkc.tdf                                                                                    ; yes             ; Auto-Generated Megafunction            ; C:/Users/jeffi/Google Drive/01 - UFRN/2019.2/Sist. Digitais/Projeto/VHDL/Aplicação/db/add_sub_mkc.tdf         ;         ;
+; db/lpm_divide_bem.tdf                                                                                 ; yes             ; Auto-Generated Megafunction            ; C:/Users/jeffi/Google Drive/01 - UFRN/2019.2/Sist. Digitais/Projeto/VHDL/Aplicação/db/lpm_divide_bem.tdf      ;         ;
+; db/sign_div_unsign_llh.tdf                                                                            ; yes             ; Auto-Generated Megafunction            ; C:/Users/jeffi/Google Drive/01 - UFRN/2019.2/Sist. Digitais/Projeto/VHDL/Aplicação/db/sign_div_unsign_llh.tdf ;         ;
+; db/alt_u_div_c2f.tdf                                                                                  ; yes             ; Auto-Generated Megafunction            ; C:/Users/jeffi/Google Drive/01 - UFRN/2019.2/Sist. Digitais/Projeto/VHDL/Aplicação/db/alt_u_div_c2f.tdf       ;         ;
++-------------------------------------------------------------------------------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 752   ;
+;                                             ;       ;
+; Total combinational functions               ; 691   ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 293   ;
+;     -- 3 input functions                    ; 196   ;
+;     -- <=2 input functions                  ; 202   ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 555   ;
+;     -- arithmetic mode                      ; 136   ;
+;                                             ;       ;
+; Total registers                             ; 134   ;
+;     -- Dedicated logic registers            ; 134   ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 139   ;
+; Total memory bits                           ; 18432 ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 158   ;
+; Total fan-out                               ; 2887  ;
+; Average fan-out                             ; 2.92  ;
++---------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                  ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                        ; Library Name ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------+--------------+
+; |micro                                       ; 691 (0)           ; 134 (0)      ; 18432       ; 0            ; 0       ; 0         ; 139  ; 0            ; |micro                                                                                                                     ; work         ;
+;    |controller:ctrl|                         ; 134 (134)         ; 39 (39)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |micro|controller:ctrl                                                                                                     ; work         ;
+;    |convert3Disp:conv_3|                     ; 291 (8)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |micro|convert3Disp:conv_3                                                                                                 ; work         ;
+;       |convert2Disp7:conv0|                  ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |micro|convert3Disp:conv_3|convert2Disp7:conv0                                                                             ; work         ;
+;       |convert2Disp7:conv1|                  ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |micro|convert3Disp:conv_3|convert2Disp7:conv1                                                                             ; work         ;
+;       |convert2Disp7:conv2|                  ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |micro|convert3Disp:conv_3|convert2Disp7:conv2                                                                             ; work         ;
+;       |lpm_divide:Div0|                      ; 50 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |micro|convert3Disp:conv_3|lpm_divide:Div0                                                                                 ; work         ;
+;          |lpm_divide_bem:auto_generated|     ; 50 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |micro|convert3Disp:conv_3|lpm_divide:Div0|lpm_divide_bem:auto_generated                                                   ; work         ;
+;             |sign_div_unsign_llh:divider|    ; 50 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |micro|convert3Disp:conv_3|lpm_divide:Div0|lpm_divide_bem:auto_generated|sign_div_unsign_llh:divider                       ; work         ;
+;                |alt_u_div_c2f:divider|       ; 50 (50)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |micro|convert3Disp:conv_3|lpm_divide:Div0|lpm_divide_bem:auto_generated|sign_div_unsign_llh:divider|alt_u_div_c2f:divider ; work         ;
+;       |lpm_divide:Mod0|                      ; 82 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |micro|convert3Disp:conv_3|lpm_divide:Mod0                                                                                 ; work         ;
+;          |lpm_divide_q7m:auto_generated|     ; 82 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |micro|convert3Disp:conv_3|lpm_divide:Mod0|lpm_divide_q7m:auto_generated                                                   ; work         ;
+;             |sign_div_unsign_1nh:divider|    ; 82 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |micro|convert3Disp:conv_3|lpm_divide:Mod0|lpm_divide_q7m:auto_generated|sign_div_unsign_1nh:divider                       ; work         ;
+;                |alt_u_div_45f:divider|       ; 82 (82)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |micro|convert3Disp:conv_3|lpm_divide:Mod0|lpm_divide_q7m:auto_generated|sign_div_unsign_1nh:divider|alt_u_div_45f:divider ; work         ;
+;       |lpm_divide:Mod1|                      ; 130 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |micro|convert3Disp:conv_3|lpm_divide:Mod1                                                                                 ; work         ;
+;          |lpm_divide_q7m:auto_generated|     ; 130 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |micro|convert3Disp:conv_3|lpm_divide:Mod1|lpm_divide_q7m:auto_generated                                                   ; work         ;
+;             |sign_div_unsign_1nh:divider|    ; 130 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |micro|convert3Disp:conv_3|lpm_divide:Mod1|lpm_divide_q7m:auto_generated|sign_div_unsign_1nh:divider                       ; work         ;
+;                |alt_u_div_45f:divider|       ; 130 (130)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |micro|convert3Disp:conv_3|lpm_divide:Mod1|lpm_divide_q7m:auto_generated|sign_div_unsign_1nh:divider|alt_u_div_45f:divider ; work         ;
+;    |datapath:dp|                             ; 266 (0)           ; 95 (0)       ; 18432       ; 0            ; 0       ; 0         ; 0    ; 0            ; |micro|datapath:dp                                                                                                         ; work         ;
+;       |add_10:add_PC|                        ; 10 (10)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |micro|datapath:dp|add_10:add_PC                                                                                           ; work         ;
+;       |add_8:add_MD|                         ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |micro|datapath:dp|add_8:add_MD                                                                                            ; work         ;
+;       |comp_8:comp|                          ; 18 (18)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |micro|datapath:dp|comp_8:comp                                                                                             ; work         ;
+;       |inc_10:inc_PC|                        ; 10 (10)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |micro|datapath:dp|inc_10:inc_PC                                                                                           ; work         ;
+;       |men_dados:md|                         ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |micro|datapath:dp|men_dados:md                                                                                            ; work         ;
+;          |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |micro|datapath:dp|men_dados:md|altsyncram:altsyncram_component                                                            ; work         ;
+;             |altsyncram_l0g1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |micro|datapath:dp|men_dados:md|altsyncram:altsyncram_component|altsyncram_l0g1:auto_generated                             ; work         ;
+;       |men_prog:mp|                          ; 0 (0)             ; 0 (0)        ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |micro|datapath:dp|men_prog:mp                                                                                             ; work         ;
+;          |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |micro|datapath:dp|men_prog:mp|altsyncram:altsyncram_component                                                             ; work         ;
+;             |altsyncram_nki1:auto_generated| ; 0 (0)             ; 0 (0)        ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |micro|datapath:dp|men_prog:mp|altsyncram:altsyncram_component|altsyncram_nki1:auto_generated                              ; work         ;
+;       |mux2x1_8:mux_o2|                      ; 19 (19)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |micro|datapath:dp|mux2x1_8:mux_o2                                                                                         ; work         ;
+;       |mux4x1_10:mux_pc|                     ; 20 (20)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |micro|datapath:dp|mux4x1_10:mux_pc                                                                                        ; work         ;
+;       |mux4x1_8:mux_i0|                      ; 36 (36)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |micro|datapath:dp|mux4x1_8:mux_i0                                                                                         ; work         ;
+;       |mux4x1_8:mux_o0|                      ; 16 (16)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |micro|datapath:dp|mux4x1_8:mux_o0                                                                                         ; work         ;
+;       |reg10:reg_PC|                         ; 12 (12)           ; 10 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |micro|datapath:dp|reg10:reg_PC                                                                                            ; work         ;
+;       |reg10_l:reg_RP|                       ; 0 (0)             ; 10 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |micro|datapath:dp|reg10_l:reg_RP                                                                                          ; work         ;
+;       |reg16_l:reg_RI|                       ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |micro|datapath:dp|reg16_l:reg_RI                                                                                          ; work         ;
+;       |reg1_l:reg_C|                         ; 7 (7)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |micro|datapath:dp|reg1_l:reg_C                                                                                            ; work         ;
+;       |reg1_l:reg_O|                         ; 3 (3)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |micro|datapath:dp|reg1_l:reg_O                                                                                            ; work         ;
+;       |reg1_l:reg_S|                         ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |micro|datapath:dp|reg1_l:reg_S                                                                                            ; work         ;
+;       |reg8_l:reg_i0|                        ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |micro|datapath:dp|reg8_l:reg_i0                                                                                           ; work         ;
+;       |reg8_l:reg_i1|                        ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |micro|datapath:dp|reg8_l:reg_i1                                                                                           ; work         ;
+;       |reg8_l:reg_o0|                        ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |micro|datapath:dp|reg8_l:reg_o0                                                                                           ; work         ;
+;       |reg8_l:reg_o1|                        ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |micro|datapath:dp|reg8_l:reg_o1                                                                                           ; work         ;
+;       |reg8_l:reg_r1|                        ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |micro|datapath:dp|reg8_l:reg_r1                                                                                           ; work         ;
+;       |reg8_l:reg_r2|                        ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |micro|datapath:dp|reg8_l:reg_r2                                                                                           ; work         ;
+;       |reg8_l:reg_r3|                        ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |micro|datapath:dp|reg8_l:reg_r3                                                                                           ; work         ;
+;       |ula:ula_cmp|                          ; 106 (2)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |micro|datapath:dp|ula:ula_cmp                                                                                             ; work         ;
+;          |mux8x1_9:mux_comp|                 ; 30 (30)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |micro|datapath:dp|ula:ula_cmp|mux8x1_9:mux_comp                                                                           ; work         ;
+;          |sll_9:sll_comp|                    ; 22 (22)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |micro|datapath:dp|ula:ula_cmp|sll_9:sll_comp                                                                              ; work         ;
+;          |sra_9:sra_comp|                    ; 14 (14)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |micro|datapath:dp|ula:ula_cmp|sra_9:sra_comp                                                                              ; work         ;
+;          |srl_9:srl_comp|                    ; 19 (19)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |micro|datapath:dp|ula:ula_cmp|srl_9:srl_comp                                                                              ; work         ;
+;          |sub_9:sub_comp|                    ; 19 (19)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |micro|datapath:dp|ula:ula_cmp|sub_9:sub_comp                                                                              ; work         ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                                                                                      ;
++----------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+---------------------------------------------------------------------------------------------------------+
+; Name                                                                                               ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF                                                                                                     ;
++----------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+---------------------------------------------------------------------------------------------------------+
+; datapath:dp|men_dados:md|altsyncram:altsyncram_component|altsyncram_l0g1:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 256          ; 8            ; --           ; --           ; 2048  ; None                                                                                                    ;
+; datapath:dp|men_prog:mp|altsyncram:altsyncram_component|altsyncram_nki1:auto_generated|ALTSYNCRAM  ; AUTO ; ROM         ; 1024         ; 16           ; --           ; --           ; 16384 ; C:\Users\jeffi\Google Drive\01 - UFRN\2019.2\Sist. Digitais\Projeto\VHDL\Memories\men_prog\men_prog.mif ;
++----------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+---------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                                                                                       ;
++--------+--------------+---------+--------------+--------------+---------------------------------+-----------------------------------------------------------------------------------------------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                 ; IP Include File                                                                                           ;
++--------+--------------+---------+--------------+--------------+---------------------------------+-----------------------------------------------------------------------------------------------------------+
+; Altera ; RAM: 1-PORT  ; N/A     ; N/A          ; N/A          ; |micro|datapath:dp|men_dados:md ; C:/Users/jeffi/Google Drive/01 - UFRN/2019.2/Sist. Digitais/Projeto/VHDL/Memories/men_dados/men_dados.vhd ;
+; Altera ; ROM: 1-PORT  ; N/A     ; N/A          ; N/A          ; |micro|datapath:dp|men_prog:mp  ; C:/Users/jeffi/Google Drive/01 - UFRN/2019.2/Sist. Digitais/Projeto/VHDL/Memories/men_prog/men_prog.vhd   ;
++--------+--------------+---------+--------------+--------------+---------------------------------+-----------------------------------------------------------------------------------------------------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |micro|controller:ctrl|state                                                                                                                                                                                                                                                                                                                                                                                                                                        ;
++---------------+---------------+-------------+-------------+-------------+-------------+------------+-------------+--------------+-------------+--------------+-------------+--------------+-------------+--------------+-------------+------------+------------+--------------+-------------+--------------+--------------+-------------+-------------+-------------+-------------+------------+-------------+-------------+-------------+---------------+-------------+------------+
+; Name          ; state.s_delay ; state.s_bro ; state.s_brs ; state.s_brc ; state.s_out ; state.s_in ; state.s_ret ; state.s_call ; state.s_bge ; state.s_bge1 ; state.s_blt ; state.s_blt1 ; state.s_beq ; state.s_beq1 ; state.s_nop ; state.s_st ; state.s_ld ; state.s_xori ; state.s_ori ; state.s_andi ; state.s_addi ; state.s_sra ; state.s_sll ; state.s_srl ; state.s_xor ; state.s_or ; state.s_and ; state.s_sub ; state.s_add ; state.decoder ; state.fetch ; state.init ;
++---------------+---------------+-------------+-------------+-------------+-------------+------------+-------------+--------------+-------------+--------------+-------------+--------------+-------------+--------------+-------------+------------+------------+--------------+-------------+--------------+--------------+-------------+-------------+-------------+-------------+------------+-------------+-------------+-------------+---------------+-------------+------------+
+; state.init    ; 0             ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0          ; 0          ; 0            ; 0           ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0           ; 0           ; 0             ; 0           ; 0          ;
+; state.fetch   ; 0             ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0          ; 0          ; 0            ; 0           ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0           ; 0           ; 0             ; 1           ; 1          ;
+; state.decoder ; 0             ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0          ; 0          ; 0            ; 0           ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0           ; 0           ; 1             ; 0           ; 1          ;
+; state.s_add   ; 0             ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0          ; 0          ; 0            ; 0           ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0           ; 1           ; 0             ; 0           ; 1          ;
+; state.s_sub   ; 0             ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0          ; 0          ; 0            ; 0           ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 1           ; 0           ; 0             ; 0           ; 1          ;
+; state.s_and   ; 0             ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0          ; 0          ; 0            ; 0           ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0          ; 1           ; 0           ; 0           ; 0             ; 0           ; 1          ;
+; state.s_or    ; 0             ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0          ; 0          ; 0            ; 0           ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 1          ; 0           ; 0           ; 0           ; 0             ; 0           ; 1          ;
+; state.s_xor   ; 0             ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0          ; 0          ; 0            ; 0           ; 0            ; 0            ; 0           ; 0           ; 0           ; 1           ; 0          ; 0           ; 0           ; 0           ; 0             ; 0           ; 1          ;
+; state.s_srl   ; 0             ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0          ; 0          ; 0            ; 0           ; 0            ; 0            ; 0           ; 0           ; 1           ; 0           ; 0          ; 0           ; 0           ; 0           ; 0             ; 0           ; 1          ;
+; state.s_sll   ; 0             ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0          ; 0          ; 0            ; 0           ; 0            ; 0            ; 0           ; 1           ; 0           ; 0           ; 0          ; 0           ; 0           ; 0           ; 0             ; 0           ; 1          ;
+; state.s_sra   ; 0             ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0          ; 0          ; 0            ; 0           ; 0            ; 0            ; 1           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0           ; 0           ; 0             ; 0           ; 1          ;
+; state.s_addi  ; 0             ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0          ; 0          ; 0            ; 0           ; 0            ; 1            ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0           ; 0           ; 0             ; 0           ; 1          ;
+; state.s_andi  ; 0             ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0          ; 0          ; 0            ; 0           ; 1            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0           ; 0           ; 0             ; 0           ; 1          ;
+; state.s_ori   ; 0             ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0          ; 0          ; 0            ; 1           ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0           ; 0           ; 0             ; 0           ; 1          ;
+; state.s_xori  ; 0             ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0          ; 0          ; 1            ; 0           ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0           ; 0           ; 0             ; 0           ; 1          ;
+; state.s_ld    ; 0             ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0          ; 1          ; 0            ; 0           ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0           ; 0           ; 0             ; 0           ; 1          ;
+; state.s_st    ; 0             ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 1          ; 0          ; 0            ; 0           ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0           ; 0           ; 0             ; 0           ; 1          ;
+; state.s_nop   ; 0             ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 1           ; 0          ; 0          ; 0            ; 0           ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0           ; 0           ; 0             ; 0           ; 1          ;
+; state.s_beq1  ; 0             ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 1            ; 0           ; 0          ; 0          ; 0            ; 0           ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0           ; 0           ; 0             ; 0           ; 1          ;
+; state.s_beq   ; 0             ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 1           ; 0            ; 0           ; 0          ; 0          ; 0            ; 0           ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0           ; 0           ; 0             ; 0           ; 1          ;
+; state.s_blt1  ; 0             ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0            ; 0           ; 0            ; 0           ; 1            ; 0           ; 0            ; 0           ; 0          ; 0          ; 0            ; 0           ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0           ; 0           ; 0             ; 0           ; 1          ;
+; state.s_blt   ; 0             ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0            ; 0           ; 0            ; 1           ; 0            ; 0           ; 0            ; 0           ; 0          ; 0          ; 0            ; 0           ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0           ; 0           ; 0             ; 0           ; 1          ;
+; state.s_bge1  ; 0             ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0            ; 0           ; 1            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0          ; 0          ; 0            ; 0           ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0           ; 0           ; 0             ; 0           ; 1          ;
+; state.s_bge   ; 0             ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0            ; 1           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0          ; 0          ; 0            ; 0           ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0           ; 0           ; 0             ; 0           ; 1          ;
+; state.s_call  ; 0             ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 1            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0          ; 0          ; 0            ; 0           ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0           ; 0           ; 0             ; 0           ; 1          ;
+; state.s_ret   ; 0             ; 0           ; 0           ; 0           ; 0           ; 0          ; 1           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0          ; 0          ; 0            ; 0           ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0           ; 0           ; 0             ; 0           ; 1          ;
+; state.s_in    ; 0             ; 0           ; 0           ; 0           ; 0           ; 1          ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0          ; 0          ; 0            ; 0           ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0           ; 0           ; 0             ; 0           ; 1          ;
+; state.s_out   ; 0             ; 0           ; 0           ; 0           ; 1           ; 0          ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0          ; 0          ; 0            ; 0           ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0           ; 0           ; 0             ; 0           ; 1          ;
+; state.s_brc   ; 0             ; 0           ; 0           ; 1           ; 0           ; 0          ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0          ; 0          ; 0            ; 0           ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0           ; 0           ; 0             ; 0           ; 1          ;
+; state.s_brs   ; 0             ; 0           ; 1           ; 0           ; 0           ; 0          ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0          ; 0          ; 0            ; 0           ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0           ; 0           ; 0             ; 0           ; 1          ;
+; state.s_bro   ; 0             ; 1           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0          ; 0          ; 0            ; 0           ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0           ; 0           ; 0             ; 0           ; 1          ;
+; state.s_delay ; 1             ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0            ; 0           ; 0          ; 0          ; 0            ; 0           ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0          ; 0           ; 0           ; 0           ; 0             ; 0           ; 1          ;
++---------------+---------------+-------------+-------------+-------------+-------------+------------+-------------+--------------+-------------+--------------+-------------+--------------+-------------+--------------+-------------+------------+------------+--------------+-------------+--------------+--------------+-------------+-------------+-------------+-------------+------------+-------------+-------------+-------------+---------------+-------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                        ;
++-----------------------------------------------------+-----------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal         ; Free of Timing Hazards ;
++-----------------------------------------------------+-----------------------------+------------------------+
+; controller:ctrl|ctl_addr_pc[1]                      ; controller:ctrl|ctl_addr_pc ; yes                    ;
+; controller:ctrl|ctl_addr_pc[0]                      ; controller:ctrl|ctl_addr_pc ; yes                    ;
+; controller:ctrl|ctl_addr_o0[1]                      ; controller:ctrl|WideOr15    ; yes                    ;
+; controller:ctrl|ctl_addr_o0[0]                      ; controller:ctrl|WideOr15    ; yes                    ;
+; controller:ctrl|ctl_ld_o0                           ; controller:ctrl|WideOr15    ; yes                    ;
+; controller:ctrl|ctl_ld_o1                           ; controller:ctrl|WideOr15    ; yes                    ;
+; controller:ctrl|ctl_ld_ri                           ; controller:ctrl|WideOr15    ; yes                    ;
+; controller:ctrl|ctl_ld_rp                           ; controller:ctrl|WideOr15    ; yes                    ;
+; controller:ctrl|ctl_addr_o1[1]                      ; controller:ctrl|WideOr15    ; yes                    ;
+; controller:ctrl|ctl_addr_o2                         ; controller:ctrl|WideOr15    ; yes                    ;
+; controller:ctrl|ctl_addr_o1[0]                      ; controller:ctrl|WideOr15    ; yes                    ;
+; controller:ctrl|ctl_rst_pc                          ; controller:ctrl|WideOr15    ; yes                    ;
+; controller:ctrl|ctl_addr_i0[1]                      ; controller:ctrl|WideOr15    ; yes                    ;
+; controller:ctrl|ctl_addr_i0[0]                      ; controller:ctrl|WideOr15    ; yes                    ;
+; controller:ctrl|ctl_ula_code[1]                     ; controller:ctrl|WideOr15    ; yes                    ;
+; controller:ctrl|ctl_ula_code[0]                     ; controller:ctrl|WideOr15    ; yes                    ;
+; controller:ctrl|ctl_ula_code[2]                     ; controller:ctrl|WideOr15    ; yes                    ;
+; controller:ctrl|ctl_ld_r1                           ; controller:ctrl|WideOr15    ; yes                    ;
+; controller:ctrl|ctl_ld_r2                           ; controller:ctrl|WideOr15    ; yes                    ;
+; controller:ctrl|ctl_ld_r3                           ; controller:ctrl|WideOr15    ; yes                    ;
+; controller:ctrl|ctl_ld_s                            ; controller:ctrl|WideOr15    ; yes                    ;
+; controller:ctrl|ctl_ld_o                            ; controller:ctrl|WideOr15    ; yes                    ;
+; controller:ctrl|ctl_ld_c                            ; controller:ctrl|WideOr15    ; yes                    ;
+; controller:ctrl|ctl_wr_md                           ; controller:ctrl|WideOr15    ; yes                    ;
+; controller:ctrl|ctl_ld_i1                           ; controller:ctrl|WideOr15    ; yes                    ;
+; controller:ctrl|ctl_ld_i0                           ; controller:ctrl|WideOr15    ; yes                    ;
+; Number of user-specified and inferred latches = 26  ;                             ;                        ;
++-----------------------------------------------------+-----------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++-----------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                ;
++------------------------------------------+----------------------------------------+
+; Register name                            ; Reason for Removal                     ;
++------------------------------------------+----------------------------------------+
+; datapath:dp|reg8_l:reg_r0|reg8_out[0..7] ; Stuck at GND due to stuck port data_in ;
+; controller:ctrl|s_state[7..31]           ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 33   ;                                        ;
++------------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 134   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 39    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 92    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------+
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |micro|datapath:dp|reg10:reg_PC|reg10_out[2]               ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |micro|datapath:dp|mux4x1_10:mux_pc|Mux7                   ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |micro|datapath:dp|mux4x1_8:mux_o0|Mux7                    ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |micro|controller:ctrl|state                               ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |micro|controller:ctrl|state                               ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |micro|controller:ctrl|state                               ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |micro|controller:ctrl|state                               ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |micro|controller:ctrl|state                               ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |micro|controller:ctrl|state                               ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |micro|controller:ctrl|state                               ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |micro|controller:ctrl|state                               ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; No         ; |micro|datapath:dp|mux2x1_8:mux_o2|mux_out[4]              ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |micro|convert3Disp:conv_3|convert2Disp7:conv0|codeDisp[6] ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |micro|convert3Disp:conv_3|convert2Disp7:conv1|codeDisp[6] ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |micro|convert3Disp:conv_3|convert2Disp7:conv2|codeDisp[5] ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |micro|controller:ctrl|Selector29                          ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |micro|controller:ctrl|Selector19                          ;
+; 20:1               ; 2 bits    ; 26 LEs        ; 16 LEs               ; 10 LEs                 ; No         ; |micro|datapath:dp|mux4x1_8:mux_i0|Mux5                    ;
+; 15:1               ; 3 bits    ; 30 LEs        ; 6 LEs                ; 24 LEs                 ; No         ; |micro|controller:ctrl|Selector44                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Source assignments for datapath:dp|men_dados:md|altsyncram:altsyncram_component|altsyncram_l0g1:auto_generated ;
++---------------------------------+--------------------+------+--------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                               ;
++---------------------------------+--------------------+------+--------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                ;
++---------------------------------+--------------------+------+--------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Source assignments for datapath:dp|men_prog:mp|altsyncram:altsyncram_component|altsyncram_nki1:auto_generated ;
++---------------------------------+--------------------+------+-------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                              ;
++---------------------------------+--------------------+------+-------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                               ;
++---------------------------------+--------------------+------+-------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dp|men_dados:md|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+-------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                      ;
++------------------------------------+----------------------+-------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                   ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                              ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                              ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                            ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                   ;
+; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped                                   ;
+; WIDTH_A                            ; 8                    ; Signed Integer                            ;
+; WIDTHAD_A                          ; 8                    ; Signed Integer                            ;
+; NUMWORDS_A                         ; 256                  ; Signed Integer                            ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                   ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                   ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                   ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                   ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                   ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                   ;
+; WIDTH_B                            ; 1                    ; Untyped                                   ;
+; WIDTHAD_B                          ; 1                    ; Untyped                                   ;
+; NUMWORDS_B                         ; 1                    ; Untyped                                   ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                   ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                   ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                   ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                   ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                   ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                   ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                   ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                   ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                   ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                   ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                   ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                   ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                            ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                   ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                   ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                   ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                   ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                   ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                   ;
+; INIT_FILE                          ; UNUSED               ; Untyped                                   ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                   ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                   ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                   ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                   ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                                   ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                   ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                   ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                   ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                   ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                   ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                   ;
+; DEVICE_FAMILY                      ; Cyclone II           ; Untyped                                   ;
+; CBXI_PARAMETER                     ; altsyncram_l0g1      ; Untyped                                   ;
++------------------------------------+----------------------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dp|men_prog:mp|altsyncram:altsyncram_component                                                          ;
++------------------------------------+---------------------------------------------------------------------------------------------------------+----------------+
+; Parameter Name                     ; Value                                                                                                   ; Type           ;
++------------------------------------+---------------------------------------------------------------------------------------------------------+----------------+
+; BYTE_SIZE_BLOCK                    ; 8                                                                                                       ; Untyped        ;
+; AUTO_CARRY_CHAINS                  ; ON                                                                                                      ; AUTO_CARRY     ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                                                                                     ; IGNORE_CARRY   ;
+; AUTO_CASCADE_CHAINS                ; ON                                                                                                      ; AUTO_CASCADE   ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                                                                                     ; IGNORE_CASCADE ;
+; WIDTH_BYTEENA                      ; 1                                                                                                       ; Untyped        ;
+; OPERATION_MODE                     ; ROM                                                                                                     ; Untyped        ;
+; WIDTH_A                            ; 16                                                                                                      ; Signed Integer ;
+; WIDTHAD_A                          ; 10                                                                                                      ; Signed Integer ;
+; NUMWORDS_A                         ; 1024                                                                                                    ; Signed Integer ;
+; OUTDATA_REG_A                      ; UNREGISTERED                                                                                            ; Untyped        ;
+; ADDRESS_ACLR_A                     ; NONE                                                                                                    ; Untyped        ;
+; OUTDATA_ACLR_A                     ; NONE                                                                                                    ; Untyped        ;
+; WRCONTROL_ACLR_A                   ; NONE                                                                                                    ; Untyped        ;
+; INDATA_ACLR_A                      ; NONE                                                                                                    ; Untyped        ;
+; BYTEENA_ACLR_A                     ; NONE                                                                                                    ; Untyped        ;
+; WIDTH_B                            ; 1                                                                                                       ; Untyped        ;
+; WIDTHAD_B                          ; 1                                                                                                       ; Untyped        ;
+; NUMWORDS_B                         ; 1                                                                                                       ; Untyped        ;
+; INDATA_REG_B                       ; CLOCK1                                                                                                  ; Untyped        ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                                                                                  ; Untyped        ;
+; RDCONTROL_REG_B                    ; CLOCK1                                                                                                  ; Untyped        ;
+; ADDRESS_REG_B                      ; CLOCK1                                                                                                  ; Untyped        ;
+; OUTDATA_REG_B                      ; UNREGISTERED                                                                                            ; Untyped        ;
+; BYTEENA_REG_B                      ; CLOCK1                                                                                                  ; Untyped        ;
+; INDATA_ACLR_B                      ; NONE                                                                                                    ; Untyped        ;
+; WRCONTROL_ACLR_B                   ; NONE                                                                                                    ; Untyped        ;
+; ADDRESS_ACLR_B                     ; NONE                                                                                                    ; Untyped        ;
+; OUTDATA_ACLR_B                     ; NONE                                                                                                    ; Untyped        ;
+; RDCONTROL_ACLR_B                   ; NONE                                                                                                    ; Untyped        ;
+; BYTEENA_ACLR_B                     ; NONE                                                                                                    ; Untyped        ;
+; WIDTH_BYTEENA_A                    ; 1                                                                                                       ; Signed Integer ;
+; WIDTH_BYTEENA_B                    ; 1                                                                                                       ; Untyped        ;
+; RAM_BLOCK_TYPE                     ; AUTO                                                                                                    ; Untyped        ;
+; BYTE_SIZE                          ; 8                                                                                                       ; Untyped        ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                                                               ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                                                                                    ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                                                                                    ; Untyped        ;
+; INIT_FILE                          ; C:\Users\jeffi\Google Drive\01 - UFRN\2019.2\Sist. Digitais\Projeto\VHDL\Memories\men_prog\men_prog.mif ; Untyped        ;
+; INIT_FILE_LAYOUT                   ; PORT_A                                                                                                  ; Untyped        ;
+; MAXIMUM_DEPTH                      ; 0                                                                                                       ; Untyped        ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS                                                                                                  ; Untyped        ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                                                                                                  ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS                                                                                                  ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                                                                                  ; Untyped        ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                                                                                         ; Untyped        ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                                                                                         ; Untyped        ;
+; ENABLE_ECC                         ; FALSE                                                                                                   ; Untyped        ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                                                                                   ; Untyped        ;
+; WIDTH_ECCSTATUS                    ; 3                                                                                                       ; Untyped        ;
+; DEVICE_FAMILY                      ; Cyclone II                                                                                              ; Untyped        ;
+; CBXI_PARAMETER                     ; altsyncram_nki1                                                                                         ; Untyped        ;
++------------------------------------+---------------------------------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: convert3Disp:conv_3|lpm_divide:Mod1 ;
++------------------------+----------------+--------------------------------------------+
+; Parameter Name         ; Value          ; Type                                       ;
++------------------------+----------------+--------------------------------------------+
+; LPM_WIDTHN             ; 10             ; Untyped                                    ;
+; LPM_WIDTHD             ; 10             ; Untyped                                    ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
+; LPM_PIPELINE           ; 0              ; Untyped                                    ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                    ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                    ;
+; CBXI_PARAMETER         ; lpm_divide_q7m ; Untyped                                    ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                    ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                    ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                 ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                               ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                               ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                             ;
++------------------------+----------------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: convert3Disp:conv_3|lpm_divide:Mod0 ;
++------------------------+----------------+--------------------------------------------+
+; Parameter Name         ; Value          ; Type                                       ;
++------------------------+----------------+--------------------------------------------+
+; LPM_WIDTHN             ; 10             ; Untyped                                    ;
+; LPM_WIDTHD             ; 10             ; Untyped                                    ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
+; LPM_PIPELINE           ; 0              ; Untyped                                    ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                    ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                    ;
+; CBXI_PARAMETER         ; lpm_divide_q7m ; Untyped                                    ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                    ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                    ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                 ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                               ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                               ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                             ;
++------------------------+----------------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: convert3Disp:conv_3|lpm_divide:Div0 ;
++------------------------+----------------+--------------------------------------------+
+; Parameter Name         ; Value          ; Type                                       ;
++------------------------+----------------+--------------------------------------------+
+; LPM_WIDTHN             ; 10             ; Untyped                                    ;
+; LPM_WIDTHD             ; 5              ; Untyped                                    ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
+; LPM_PIPELINE           ; 0              ; Untyped                                    ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                    ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                    ;
+; CBXI_PARAMETER         ; lpm_divide_bem ; Untyped                                    ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                    ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                    ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                 ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                               ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                               ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                             ;
++------------------------+----------------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                     ;
++-------------------------------------------+----------------------------------------------------------+
+; Name                                      ; Value                                                    ;
++-------------------------------------------+----------------------------------------------------------+
+; Number of entity instances                ; 2                                                        ;
+; Entity Instance                           ; datapath:dp|men_dados:md|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; SINGLE_PORT                                              ;
+;     -- WIDTH_A                            ; 8                                                        ;
+;     -- NUMWORDS_A                         ; 256                                                      ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                             ;
+;     -- WIDTH_B                            ; 1                                                        ;
+;     -- NUMWORDS_B                         ; 1                                                        ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                   ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                             ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                     ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                ;
+; Entity Instance                           ; datapath:dp|men_prog:mp|altsyncram:altsyncram_component  ;
+;     -- OPERATION_MODE                     ; ROM                                                      ;
+;     -- WIDTH_A                            ; 16                                                       ;
+;     -- NUMWORDS_A                         ; 1024                                                     ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                             ;
+;     -- WIDTH_B                            ; 1                                                        ;
+;     -- NUMWORDS_B                         ; 1                                                        ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                   ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                             ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                     ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                ;
++-------------------------------------------+----------------------------------------------------------+
+
+
++-------------------------------------------------------+
+; Port Connectivity Checks: "datapath:dp|reg8_l:reg_r0" ;
++---------+-------+----------+--------------------------+
+; Port    ; Type  ; Severity ; Details                  ;
++---------+-------+----------+--------------------------+
+; reg8_in ; Input ; Info     ; Stuck at GND             ;
++---------+-------+----------+--------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:06     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Tue Nov 26 23:55:15 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off micro -c micro
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file convert3disp.vhd
+    Info (12022): Found design unit 1: convert3Disp-behaviour
+    Info (12023): Found entity 1: convert3Disp
+Info (12021): Found 2 design units, including 1 entities, in source file convert2disp7.vhd
+    Info (12022): Found design unit 1: convert2Disp7-behaviour
+    Info (12023): Found entity 1: convert2Disp7
+Info (12021): Found 2 design units, including 1 entities, in source file /users/jeffi/google drive/01 - ufrn/2019.2/sist. digitais/projeto/vhdl/memories/men_prog/men_prog.vhd
+    Info (12022): Found design unit 1: men_prog-SYN
+    Info (12023): Found entity 1: men_prog
+Info (12021): Found 2 design units, including 1 entities, in source file /users/jeffi/google drive/01 - ufrn/2019.2/sist. digitais/projeto/vhdl/memories/men_dados/men_dados.vhd
+    Info (12022): Found design unit 1: men_dados-SYN
+    Info (12023): Found entity 1: men_dados
+Info (12021): Found 2 design units, including 1 entities, in source file /users/jeffi/google drive/01 - ufrn/2019.2/sist. digitais/projeto/vhdl/ula/xor_9.vhd
+    Info (12022): Found design unit 1: xor_9-arc_xor9
+    Info (12023): Found entity 1: xor_9
+Info (12021): Found 2 design units, including 1 entities, in source file /users/jeffi/google drive/01 - ufrn/2019.2/sist. digitais/projeto/vhdl/ula/ula.vhd
+    Info (12022): Found design unit 1: ula-arc_ula
+    Info (12023): Found entity 1: ula
+Info (12021): Found 2 design units, including 1 entities, in source file /users/jeffi/google drive/01 - ufrn/2019.2/sist. digitais/projeto/vhdl/ula/sub_9.vhd
+    Info (12022): Found design unit 1: sub_9-arc_sub9
+    Info (12023): Found entity 1: sub_9
+Info (12021): Found 2 design units, including 1 entities, in source file /users/jeffi/google drive/01 - ufrn/2019.2/sist. digitais/projeto/vhdl/ula/srl_9.vhd
+    Info (12022): Found design unit 1: srl_9-arc_srl9
+    Info (12023): Found entity 1: srl_9
+Info (12021): Found 2 design units, including 1 entities, in source file /users/jeffi/google drive/01 - ufrn/2019.2/sist. digitais/projeto/vhdl/ula/sra_9.vhd
+    Info (12022): Found design unit 1: sra_9-arc_sra9
+    Info (12023): Found entity 1: sra_9
+Info (12021): Found 2 design units, including 1 entities, in source file /users/jeffi/google drive/01 - ufrn/2019.2/sist. digitais/projeto/vhdl/ula/sll_9.vhd
+    Info (12022): Found design unit 1: sll_9-arc_sll9
+    Info (12023): Found entity 1: sll_9
+Info (12021): Found 2 design units, including 1 entities, in source file /users/jeffi/google drive/01 - ufrn/2019.2/sist. digitais/projeto/vhdl/ula/or_9.vhd
+    Info (12022): Found design unit 1: or_9-arc_or9
+    Info (12023): Found entity 1: or_9
+Info (12021): Found 2 design units, including 1 entities, in source file /users/jeffi/google drive/01 - ufrn/2019.2/sist. digitais/projeto/vhdl/ula/mux8x1_9.vhd
+    Info (12022): Found design unit 1: mux8x1_9-arc_mux8x1_9
+    Info (12023): Found entity 1: mux8x1_9
+Info (12021): Found 2 design units, including 1 entities, in source file /users/jeffi/google drive/01 - ufrn/2019.2/sist. digitais/projeto/vhdl/ula/and_9.vhd
+    Info (12022): Found design unit 1: and_9-arc_and9
+    Info (12023): Found entity 1: and_9
+Info (12021): Found 2 design units, including 1 entities, in source file /users/jeffi/google drive/01 - ufrn/2019.2/sist. digitais/projeto/vhdl/ula/add_9.vhd
+    Info (12022): Found design unit 1: add_9-arc_add9
+    Info (12023): Found entity 1: add_9
+Info (12021): Found 2 design units, including 1 entities, in source file /users/jeffi/google drive/01 - ufrn/2019.2/sist. digitais/projeto/vhdl/datapath/reg16_l.vhd
+    Info (12022): Found design unit 1: reg16_l-arc_reg16_l
+    Info (12023): Found entity 1: reg16_l
+Info (12021): Found 2 design units, including 1 entities, in source file /users/jeffi/google drive/01 - ufrn/2019.2/sist. digitais/projeto/vhdl/datapath/reg10_l.vhd
+    Info (12022): Found design unit 1: reg10_l-arc_reg10_l
+    Info (12023): Found entity 1: reg10_l
+Info (12021): Found 2 design units, including 1 entities, in source file /users/jeffi/google drive/01 - ufrn/2019.2/sist. digitais/projeto/vhdl/datapath/reg10.vhd
+    Info (12022): Found design unit 1: reg10-arc_reg10
+    Info (12023): Found entity 1: reg10
+Info (12021): Found 2 design units, including 1 entities, in source file /users/jeffi/google drive/01 - ufrn/2019.2/sist. digitais/projeto/vhdl/datapath/reg8_l.vhd
+    Info (12022): Found design unit 1: reg8_l-arc_reg8_l
+    Info (12023): Found entity 1: reg8_l
+Info (12021): Found 2 design units, including 1 entities, in source file /users/jeffi/google drive/01 - ufrn/2019.2/sist. digitais/projeto/vhdl/datapath/reg1_l.vhd
+    Info (12022): Found design unit 1: reg1_l-arc_reg1_l
+    Info (12023): Found entity 1: reg1_l
+Info (12021): Found 2 design units, including 1 entities, in source file /users/jeffi/google drive/01 - ufrn/2019.2/sist. digitais/projeto/vhdl/datapath/mux4x1_10.vhd
+    Info (12022): Found design unit 1: mux4x1_10-arc_mux4x1_10
+    Info (12023): Found entity 1: mux4x1_10
+Info (12021): Found 2 design units, including 1 entities, in source file /users/jeffi/google drive/01 - ufrn/2019.2/sist. digitais/projeto/vhdl/datapath/mux4x1_8.vhd
+    Info (12022): Found design unit 1: mux4x1_8-arc_mux4x1_8
+    Info (12023): Found entity 1: mux4x1_8
+Info (12021): Found 2 design units, including 1 entities, in source file /users/jeffi/google drive/01 - ufrn/2019.2/sist. digitais/projeto/vhdl/datapath/mux2x1_8.vhd
+    Info (12022): Found design unit 1: mux2x1_8-arc_mux2x1_8
+    Info (12023): Found entity 1: mux2x1_8
+Info (12021): Found 2 design units, including 1 entities, in source file /users/jeffi/google drive/01 - ufrn/2019.2/sist. digitais/projeto/vhdl/datapath/inc_10.vhd
+    Info (12022): Found design unit 1: inc_10-arc_inc_10
+    Info (12023): Found entity 1: inc_10
+Info (12021): Found 2 design units, including 1 entities, in source file /users/jeffi/google drive/01 - ufrn/2019.2/sist. digitais/projeto/vhdl/datapath/datapath.vhd
+    Info (12022): Found design unit 1: datapath-arc_datapath
+    Info (12023): Found entity 1: datapath
+Info (12021): Found 2 design units, including 1 entities, in source file /users/jeffi/google drive/01 - ufrn/2019.2/sist. digitais/projeto/vhdl/datapath/comp_8.vhd
+    Info (12022): Found design unit 1: comp_8-arc_comp_8
+    Info (12023): Found entity 1: comp_8
+Info (12021): Found 2 design units, including 1 entities, in source file /users/jeffi/google drive/01 - ufrn/2019.2/sist. digitais/projeto/vhdl/datapath/add_10.vhd
+    Info (12022): Found design unit 1: add_10-arc_add_10
+    Info (12023): Found entity 1: add_10
+Info (12021): Found 2 design units, including 1 entities, in source file /users/jeffi/google drive/01 - ufrn/2019.2/sist. digitais/projeto/vhdl/datapath/add_8.vhd
+    Info (12022): Found design unit 1: add_8-arc_add_8
+    Info (12023): Found entity 1: add_8
+Info (12021): Found 2 design units, including 1 entities, in source file /users/jeffi/google drive/01 - ufrn/2019.2/sist. digitais/projeto/vhdl/controller/controller.vhd
+    Info (12022): Found design unit 1: controller-arc_controller
+    Info (12023): Found entity 1: controller
+Info (12021): Found 2 design units, including 1 entities, in source file micro.vhd
+    Info (12022): Found design unit 1: micro-arc_micro
+    Info (12023): Found entity 1: micro
+Info (12127): Elaborating entity "micro" for the top level hierarchy
+Info (12128): Elaborating entity "controller" for hierarchy "controller:ctrl"
+Warning (10492): VHDL Process Statement warning at Controller.vhd(371): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(405): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(406): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(422): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(456): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(457): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(473): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(507): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(508): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(524): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(558): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(559): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(575): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(609): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(610): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(626): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(660): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(661): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(677): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(711): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(712): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(728): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(762): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(763): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(779): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(813): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(830): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(864): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(881): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(915): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(932): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(966): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(983): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(1018): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(1048): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(1049): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(1111): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(1112): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(1122): signal "ctl_comp_eq" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(1151): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(1152): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(1162): signal "ctl_comp_lt" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(1191): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(1192): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(1202): signal "ctl_comp_lt" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(1279): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(1313): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(1334): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(1361): signal "ctl_RI" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(1390): signal "ctl_C" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(1426): signal "ctl_O" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Controller.vhd(1462): signal "ctl_S" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at Controller.vhd(268): inferring latch(es) for signal or variable "ctl_ld_i0", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Controller.vhd(268): inferring latch(es) for signal or variable "ctl_ld_i1", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Controller.vhd(268): inferring latch(es) for signal or variable "ctl_ld_o0", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Controller.vhd(268): inferring latch(es) for signal or variable "ctl_ld_o1", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Controller.vhd(268): inferring latch(es) for signal or variable "ctl_ld_r0", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Controller.vhd(268): inferring latch(es) for signal or variable "ctl_ld_r1", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Controller.vhd(268): inferring latch(es) for signal or variable "ctl_ld_r2", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Controller.vhd(268): inferring latch(es) for signal or variable "ctl_ld_r3", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Controller.vhd(268): inferring latch(es) for signal or variable "ctl_ld_o", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Controller.vhd(268): inferring latch(es) for signal or variable "ctl_ld_c", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Controller.vhd(268): inferring latch(es) for signal or variable "ctl_ld_s", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Controller.vhd(268): inferring latch(es) for signal or variable "ctl_rst_pc", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Controller.vhd(268): inferring latch(es) for signal or variable "ctl_ld_rp", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Controller.vhd(268): inferring latch(es) for signal or variable "ctl_ld_ri", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Controller.vhd(268): inferring latch(es) for signal or variable "ctl_addr_pc", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Controller.vhd(268): inferring latch(es) for signal or variable "ctl_addr_i0", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Controller.vhd(268): inferring latch(es) for signal or variable "ctl_addr_o0", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Controller.vhd(268): inferring latch(es) for signal or variable "ctl_addr_o1", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Controller.vhd(268): inferring latch(es) for signal or variable "ctl_addr_o2", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Controller.vhd(268): inferring latch(es) for signal or variable "ctl_wr_md", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Controller.vhd(268): inferring latch(es) for signal or variable "ctl_ula_code", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "ctl_ula_code[0]" at Controller.vhd(268)
+Info (10041): Inferred latch for "ctl_ula_code[1]" at Controller.vhd(268)
+Info (10041): Inferred latch for "ctl_ula_code[2]" at Controller.vhd(268)
+Info (10041): Inferred latch for "ctl_wr_md" at Controller.vhd(268)
+Info (10041): Inferred latch for "ctl_addr_o2" at Controller.vhd(268)
+Info (10041): Inferred latch for "ctl_addr_o1[0]" at Controller.vhd(268)
+Info (10041): Inferred latch for "ctl_addr_o1[1]" at Controller.vhd(268)
+Info (10041): Inferred latch for "ctl_addr_o0[0]" at Controller.vhd(268)
+Info (10041): Inferred latch for "ctl_addr_o0[1]" at Controller.vhd(268)
+Info (10041): Inferred latch for "ctl_addr_i0[0]" at Controller.vhd(268)
+Info (10041): Inferred latch for "ctl_addr_i0[1]" at Controller.vhd(268)
+Info (10041): Inferred latch for "ctl_addr_pc[0]" at Controller.vhd(268)
+Info (10041): Inferred latch for "ctl_addr_pc[1]" at Controller.vhd(268)
+Info (10041): Inferred latch for "ctl_ld_ri" at Controller.vhd(268)
+Info (10041): Inferred latch for "ctl_ld_rp" at Controller.vhd(268)
+Info (10041): Inferred latch for "ctl_rst_pc" at Controller.vhd(268)
+Info (10041): Inferred latch for "ctl_ld_s" at Controller.vhd(268)
+Info (10041): Inferred latch for "ctl_ld_c" at Controller.vhd(268)
+Info (10041): Inferred latch for "ctl_ld_o" at Controller.vhd(268)
+Info (10041): Inferred latch for "ctl_ld_r3" at Controller.vhd(268)
+Info (10041): Inferred latch for "ctl_ld_r2" at Controller.vhd(268)
+Info (10041): Inferred latch for "ctl_ld_r1" at Controller.vhd(268)
+Info (10041): Inferred latch for "ctl_ld_r0" at Controller.vhd(268)
+Info (10041): Inferred latch for "ctl_ld_o1" at Controller.vhd(268)
+Info (10041): Inferred latch for "ctl_ld_o0" at Controller.vhd(268)
+Info (10041): Inferred latch for "ctl_ld_i1" at Controller.vhd(268)
+Info (10041): Inferred latch for "ctl_ld_i0" at Controller.vhd(268)
+Info (12128): Elaborating entity "datapath" for hierarchy "datapath:dp"
+Info (12128): Elaborating entity "men_dados" for hierarchy "datapath:dp|men_dados:md"
+Info (12128): Elaborating entity "altsyncram" for hierarchy "datapath:dp|men_dados:md|altsyncram:altsyncram_component"
+Info (12130): Elaborated megafunction instantiation "datapath:dp|men_dados:md|altsyncram:altsyncram_component"
+Info (12133): Instantiated megafunction "datapath:dp|men_dados:md|altsyncram:altsyncram_component" with the following parameter:
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "intended_device_family" = "Cyclone IV GX"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+    Info (12134): Parameter "numwords_a" = "256"
+    Info (12134): Parameter "operation_mode" = "SINGLE_PORT"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
+    Info (12134): Parameter "power_up_uninitialized" = "FALSE"
+    Info (12134): Parameter "read_during_write_mode_port_a" = "NEW_DATA_NO_NBE_READ"
+    Info (12134): Parameter "widthad_a" = "8"
+    Info (12134): Parameter "width_a" = "8"
+    Info (12134): Parameter "width_byteena_a" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_l0g1.tdf
+    Info (12023): Found entity 1: altsyncram_l0g1
+Info (12128): Elaborating entity "altsyncram_l0g1" for hierarchy "datapath:dp|men_dados:md|altsyncram:altsyncram_component|altsyncram_l0g1:auto_generated"
+Info (12128): Elaborating entity "men_prog" for hierarchy "datapath:dp|men_prog:mp"
+Info (12128): Elaborating entity "altsyncram" for hierarchy "datapath:dp|men_prog:mp|altsyncram:altsyncram_component"
+Info (12130): Elaborated megafunction instantiation "datapath:dp|men_prog:mp|altsyncram:altsyncram_component"
+Info (12133): Instantiated megafunction "datapath:dp|men_prog:mp|altsyncram:altsyncram_component" with the following parameter:
+    Info (12134): Parameter "address_aclr_a" = "NONE"
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "init_file" = "C:\Users\jeffi\Google Drive\01 - UFRN\2019.2\Sist. Digitais\Projeto\VHDL\Memories\men_prog\men_prog.mif"
+    Info (12134): Parameter "intended_device_family" = "Cyclone IV GX"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+    Info (12134): Parameter "numwords_a" = "1024"
+    Info (12134): Parameter "operation_mode" = "ROM"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
+    Info (12134): Parameter "widthad_a" = "10"
+    Info (12134): Parameter "width_a" = "16"
+    Info (12134): Parameter "width_byteena_a" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_nki1.tdf
+    Info (12023): Found entity 1: altsyncram_nki1
+Info (12128): Elaborating entity "altsyncram_nki1" for hierarchy "datapath:dp|men_prog:mp|altsyncram:altsyncram_component|altsyncram_nki1:auto_generated"
+Info (12128): Elaborating entity "ula" for hierarchy "datapath:dp|ula:ula_cmp"
+Warning (10492): VHDL Process Statement warning at ula.vhd(100): signal "ula_out_9" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ula.vhd(107): signal "ula_out_9" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ula.vhd(113): signal "ula_out_9" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (12128): Elaborating entity "add_9" for hierarchy "datapath:dp|ula:ula_cmp|add_9:add_comp"
+Info (12128): Elaborating entity "sub_9" for hierarchy "datapath:dp|ula:ula_cmp|sub_9:sub_comp"
+Info (12128): Elaborating entity "and_9" for hierarchy "datapath:dp|ula:ula_cmp|and_9:and_comp"
+Info (12128): Elaborating entity "or_9" for hierarchy "datapath:dp|ula:ula_cmp|or_9:or_comp"
+Info (12128): Elaborating entity "xor_9" for hierarchy "datapath:dp|ula:ula_cmp|xor_9:xor_comp"
+Info (12128): Elaborating entity "srl_9" for hierarchy "datapath:dp|ula:ula_cmp|srl_9:srl_comp"
+Info (12128): Elaborating entity "sll_9" for hierarchy "datapath:dp|ula:ula_cmp|sll_9:sll_comp"
+Info (12128): Elaborating entity "sra_9" for hierarchy "datapath:dp|ula:ula_cmp|sra_9:sra_comp"
+Info (12128): Elaborating entity "mux8x1_9" for hierarchy "datapath:dp|ula:ula_cmp|mux8x1_9:mux_comp"
+Info (12128): Elaborating entity "inc_10" for hierarchy "datapath:dp|inc_10:inc_PC"
+Info (12128): Elaborating entity "add_10" for hierarchy "datapath:dp|add_10:add_PC"
+Info (12128): Elaborating entity "add_8" for hierarchy "datapath:dp|add_8:add_MD"
+Info (12128): Elaborating entity "comp_8" for hierarchy "datapath:dp|comp_8:comp"
+Info (12128): Elaborating entity "reg8_l" for hierarchy "datapath:dp|reg8_l:reg_i0"
+Info (12128): Elaborating entity "reg1_l" for hierarchy "datapath:dp|reg1_l:reg_C"
+Info (12128): Elaborating entity "reg10" for hierarchy "datapath:dp|reg10:reg_PC"
+Info (12128): Elaborating entity "reg10_l" for hierarchy "datapath:dp|reg10_l:reg_RP"
+Info (12128): Elaborating entity "reg16_l" for hierarchy "datapath:dp|reg16_l:reg_RI"
+Info (12128): Elaborating entity "mux4x1_8" for hierarchy "datapath:dp|mux4x1_8:mux_i0"
+Info (12128): Elaborating entity "mux2x1_8" for hierarchy "datapath:dp|mux2x1_8:mux_o2"
+Info (12128): Elaborating entity "mux4x1_10" for hierarchy "datapath:dp|mux4x1_10:mux_pc"
+Info (12128): Elaborating entity "convert3Disp" for hierarchy "convert3Disp:conv_3"
+Info (12128): Elaborating entity "convert2Disp7" for hierarchy "convert3Disp:conv_3|convert2Disp7:conv2"
+Info (278001): Inferred 3 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "convert3Disp:conv_3|Mod1"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "convert3Disp:conv_3|Mod0"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "convert3Disp:conv_3|Div0"
+Info (12130): Elaborated megafunction instantiation "convert3Disp:conv_3|lpm_divide:Mod1"
+Info (12133): Instantiated megafunction "convert3Disp:conv_3|lpm_divide:Mod1" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "10"
+    Info (12134): Parameter "LPM_WIDTHD" = "10"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_q7m.tdf
+    Info (12023): Found entity 1: lpm_divide_q7m
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_1nh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_1nh
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_45f.tdf
+    Info (12023): Found entity 1: alt_u_div_45f
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_lkc.tdf
+    Info (12023): Found entity 1: add_sub_lkc
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_mkc.tdf
+    Info (12023): Found entity 1: add_sub_mkc
+Info (12130): Elaborated megafunction instantiation "convert3Disp:conv_3|lpm_divide:Mod0"
+Info (12133): Instantiated megafunction "convert3Disp:conv_3|lpm_divide:Mod0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "10"
+    Info (12134): Parameter "LPM_WIDTHD" = "10"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12130): Elaborated megafunction instantiation "convert3Disp:conv_3|lpm_divide:Div0"
+Info (12133): Instantiated megafunction "convert3Disp:conv_3|lpm_divide:Div0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "10"
+    Info (12134): Parameter "LPM_WIDTHD" = "5"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_bem.tdf
+    Info (12023): Found entity 1: lpm_divide_bem
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_llh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_llh
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_c2f.tdf
+    Info (12023): Found entity 1: alt_u_div_c2f
+Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
+    Info (13026): Duplicate LATCH primitive "controller:ctrl|ctl_ld_i0" merged with LATCH primitive "controller:ctrl|ctl_ld_i1"
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "state[7]" is stuck at GND
+    Warning (13410): Pin "state[8]" is stuck at GND
+    Warning (13410): Pin "state[9]" is stuck at GND
+    Warning (13410): Pin "state[10]" is stuck at GND
+    Warning (13410): Pin "state[11]" is stuck at GND
+    Warning (13410): Pin "state[12]" is stuck at GND
+    Warning (13410): Pin "state[13]" is stuck at GND
+    Warning (13410): Pin "state[14]" is stuck at GND
+    Warning (13410): Pin "state[15]" is stuck at GND
+    Warning (13410): Pin "state[16]" is stuck at GND
+    Warning (13410): Pin "state[17]" is stuck at GND
+    Warning (13410): Pin "state[18]" is stuck at GND
+    Warning (13410): Pin "state[19]" is stuck at GND
+    Warning (13410): Pin "state[20]" is stuck at GND
+    Warning (13410): Pin "state[21]" is stuck at GND
+    Warning (13410): Pin "state[22]" is stuck at GND
+    Warning (13410): Pin "state[23]" is stuck at GND
+    Warning (13410): Pin "state[24]" is stuck at GND
+    Warning (13410): Pin "state[25]" is stuck at GND
+    Warning (13410): Pin "state[26]" is stuck at GND
+    Warning (13410): Pin "state[27]" is stuck at GND
+    Warning (13410): Pin "state[28]" is stuck at GND
+    Warning (13410): Pin "state[29]" is stuck at GND
+    Warning (13410): Pin "state[30]" is stuck at GND
+Critical Warning (18061): Ignored Power-Up Level option on the following registers
+    Critical Warning (18010): Register controller:ctrl|s_state[0] will power up to Low
+    Critical Warning (18010): Register controller:ctrl|s_state[31] will power up to Low
+Info (17016): Found the following redundant logic cells in design
+    Info (17048): Logic cell "convert3Disp:conv_3|lpm_divide:Div0|lpm_divide_bem:auto_generated|sign_div_unsign_llh:divider|alt_u_div_c2f:divider|add_sub_6_result_int[1]~10"
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 942 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 18 input pins
+    Info (21059): Implemented 121 output pins
+    Info (21061): Implemented 779 logic cells
+    Info (21064): Implemented 24 RAM segments
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 106 warnings
+    Info: Peak virtual memory: 4677 megabytes
+    Info: Processing ended: Tue Nov 26 23:55:29 2019
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:08
+
+

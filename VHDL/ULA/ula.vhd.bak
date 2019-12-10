@@ -1,0 +1,17 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity ula is
+	port(
+		ula_in0, ula_in1: in std_logic_vector(7 downto 0);
+		ula_opcode: in std_logic_vector(2 downto 0);
+		ula_flagC, ula_flagO, ula_flagS: out std_logic;
+		ula_out: out std_logic_vector(7 downto 0)
+	);
+end ula;
+
+architecture arc_ula of ula is
+begin
+	
+end arc_ula;

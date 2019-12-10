@@ -1,0 +1,55 @@
+# do micro.do 
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module micro
+# 
+# Top level modules:
+# 	micro
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module micro_vlg_sample_tst
+# -- Compiling module micro_vlg_check_tst
+# -- Compiling module micro_vlg_vec_tst
+# 
+# Top level modules:
+# 	micro_vlg_vec_tst
+# vsim -L cycloneii_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate -c -t 1ps -novopt work.micro_vlg_vec_tst 
+# Loading work.micro_vlg_vec_tst
+# Loading work.micro
+# Loading cycloneii_ver.cycloneii_ram_block
+# Loading cycloneii_ver.cycloneii_ram_register
+# Loading cycloneii_ver.cycloneii_ram_pulse_generator
+# Loading cycloneii_ver.cycloneii_lcell_comb
+# Loading cycloneii_ver.cycloneii_lcell_ff
+# Loading cycloneii_ver.cycloneii_io
+# Loading cycloneii_ver.cycloneii_mux21
+# Loading cycloneii_ver.cycloneii_dffe
+# Loading cycloneii_ver.cycloneii_asynch_io
+# Loading cycloneii_ver.cycloneii_clkctrl
+# Loading cycloneii_ver.cycloneii_mux41
+# Loading cycloneii_ver.cycloneii_ena_reg
+# Loading work.micro_vlg_sample_tst
+# Loading work.micro_vlg_check_tst
+# SDF 10.1d Compiler 2012.11 Nov  2 2012
+# 
+# Loading instances from micro_v.sdo
+# Loading cycloneii_ver.CYCLONEII_PRIM_DFFE
+# Loading timing data from micro_v.sdo
+# ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
+#    Time: 0 ps  Iteration: 0  Instance: /micro_vlg_vec_tst File: micro.vt
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+# 
+#           File in use by: jeffi  Hostname: DESKTOP-S4P6VEI  ProcessID: 8788
+# 
+#           Attempting to use alternate WLF file "./wlftajhbwm".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+# 
+#           Using alternate file: ./wlftajhbwm
+# 
+# ** Error: c:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(5351): $hold( posedge clk &&& nosloadsclr:3327623 ps, datain:3327768 ps, 266 ps );
+#    Time: 3327768 ps  Iteration: 0  Instance: /micro_vlg_vec_tst/i1/\dp|reg_PC|reg10_out[2] 
+# ** Error: c:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(5351): $hold( posedge clk &&& nosloadsclr:3327632 ps, datain:3327897 ps, 266 ps );
+#    Time: 3327897 ps  Iteration: 0  Instance: /micro_vlg_vec_tst/i1/\dp|reg_PC|reg10_out[9] 
+# Simulation passed !
+# ** Note: $finish    : micro.vt(447)
+#    Time: 10 us  Iteration: 0  Instance: /micro_vlg_vec_tst/tb_out

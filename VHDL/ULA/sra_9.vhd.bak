@@ -1,0 +1,15 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity sra_9 is
+port(
+		sra_in0, sra_in1: in std_logic_vector (9 downto 0);
+		sra_out: out std_logic_vector (9 downto 0)
+	);
+end sra_9;
+
+architecture arc_sra9 of sra_9 is
+begin
+	sra_out <= std_logic_vector(shift_right(signed(sra_in0), to_integer(unsigned(sra_in1))));
+end arc_sra9;

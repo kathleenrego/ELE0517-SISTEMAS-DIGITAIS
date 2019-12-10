@@ -7,6 +7,9 @@ Códigos desenvolvidos na disciplina de Sistemas Digitais ministrada pelo profes
 * https://drive.google.com/drive/folders/1G7jkOBab1qnzEuGTybh4szmlWF2MHPYa
 * É necessário instalar o proglema e suas dependências.
 
+#### Link para download do Altera Monitor (Necessário na parte 2): 
+* https://www.intel.com/content/www/us/en/programmable/support/training/university/materials-software.html?&ifup_version=13.0
+
 #### Linguagens de Programação:
 * VHDL
 * Assembly
